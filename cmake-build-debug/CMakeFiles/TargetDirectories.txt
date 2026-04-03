@@ -1,0 +1,3 @@
+C:/Users/krove44/CLionProjects/second_laba/cmake-build-debug/CMakeFiles/second_laba.dir
+C:/Users/krove44/CLionProjects/second_laba/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/krove44/CLionProjects/second_laba/cmake-build-debug/CMakeFiles/rebuild_cache.dir
