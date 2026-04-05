@@ -6,26 +6,19 @@
 template<typename T>
 class ArraySequence : public ISequence<T> {
 private:
-    DynamicArray<T>* data;
-    size_t size;
+    DynamicArray<T> data;
 public:
-    ArraySequence(T* items, int count){
-        size = count;
+    ArraySequence(T* items, int count) : data(count){
         for (size_t i = 0; i < count; i++){
-            data[i] = items[i];
+            data.Set(i, items[i]);
         }
     };
 
-    ArraySequence(){
-        size = 0;
-    };
+    ArraySequence() : data(){};
 
-    ArraySequence(const size_t len) {
-        size = len;
-        data = DynamicArray<T>(len);
-    }
+    ArraySequence(const size_t len) : data(len){};
 
-    ArraySequence(const ArraySequence<T>& ){};
+    ArraySequence(const ArraySequence<T>& other) : data(other.data){};
 
     T GetFirst(){
         return data.Get(0);
@@ -44,23 +37,31 @@ public:
     ArraySequence<T>* GetSubsequence(int startIndex, int endIndex){
         ArraySequence<T> new_data(endIndex-startIndex);
         for(size_t i = 0; i < endIndex-startIndex + 1; i++){
-            new_data[i] = data[i + startIndex];
+            new_data.Append(data.Get(i + startIndex))
         }
-        return new_data;
+        return &new_data;
     };
 
     int GetLength() {
-        return size;
+        return data.GetSize();
     };
 
     ArraySequence<T>* Append(T item){
-        data->Resize(data->size + 1);
-        data->data[data->size] = item;
+        data.insertAt(item, data.GetSize());
         return this;
     };
 
     ArraySequence<T>* Prepend(T item){
-          
+          data.insertAt(item, 0);
+          return this;
     };
+
+    ArraySequence<T>* InsertAt(T item, int index){
+        data.insertAt(item, index)
+        return this;
+    };
+
+
+
 
 };

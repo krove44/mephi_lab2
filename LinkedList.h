@@ -16,24 +16,15 @@ private:
     size_t size;
 public:
 
-    LinkedList() {
-        head = nullptr;
-        tail = nullptr;
-        size = 0;
-    }
+    LinkedList() : head(nullptr), tail(nullptr), size(0){};
 
-    LinkedList(T* items, int count) {
-        size = count;
+    LinkedList(T* items, int count) : head(nullptr), tail(nullptr), size(0) {
         for(size_t i = 0; i < count; i++){
             Append(items[i]);
         }
     };
 
-    LinkedList (LinkedList<T>& other){
-        head = nullptr;
-        tail = nullptr;
-        size = 0;
-
+    LinkedList (const LinkedList<T>& other) : head(nullptr), tail(nullptr), size(0){
         Node* current = other.head;
         while (current != nullptr) {
             Append(current->data);
@@ -60,7 +51,7 @@ public:
             tail->next = newNode;
             tail = newNode;
         }
-        length++;
+        size++;
     };
 
     T GetFirst(){

@@ -7,13 +7,11 @@ private:
     size_t size;
     T* data;
 public:
-    DynamicArray(int size){
-        size = size;
+    DynamicArray(int size) : size(size) {
         data = new T[size];
     };
 
-    DynamicArray(T* items, int count){
-        size = count;
+    DynamicArray(T* items, int count) : size(count){
         data = new T[count];
         for(size_t i = 0; i < count; i++){
             data[i] = items[i];
@@ -21,13 +19,15 @@ public:
     };
 
 
-    DynamicArray(DynamicArray<T>& other){
-        data = other.data;
-        size = other.size;
+    DynamicArray(const DynamicArray<T>& other) : size(other.size){
+        data = new T[size];
+        for (size_t i = 0; i < size; i++) {
+            data[i] = other.data[i];
+        }
     };
 
     ~DynamicArray(){
-        delete data;
+        delete[] data;
     };
 
     T Get(int index){
@@ -48,12 +48,26 @@ public:
             for (size_t i = 0; i < size; i++){
                 new_data[i] = data[i];
             }
-            delete data;
+            delete[] data;
             data = new_data;
             size = newSize;    
             return;
         }
         size = newSize;
     };
+
+    void insertAt(T value, size_t index){
+        T* new_data = new T[size+1];
+        new_data[index] = value;
+        for (size_t i = 0; i < index; i++){
+           new_data[i] = data[i];
+        }
+        for (size_t i = index+1; i < size + 1; i++){
+           new_data[i] = data[i-1];
+        }
+        delete[] data;
+        data = new_data;
+        size++;
+    }
 };
 
