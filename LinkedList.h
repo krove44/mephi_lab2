@@ -15,13 +15,13 @@ private:
 
     Node* head_;
     Node* tail_;
-    size_t size_;
+    int size_;
 
-    static size_t Check_validate_size(int count) {
+    static int Check_validate_size(int count) {
         if (count < 0) {
-            throw std::invalid_argument("LinkedList size must be non-negative");
+            throw std::invalid_argument("Invalid size");
         }
-        return static_cast<size_t>(count);
+        return count;
     }
 
     void Check_empty() const {
@@ -31,7 +31,7 @@ private:
     }
 
     void Check_validate_index(int index) const {
-        if (index < 0 || static_cast<size_t>(index) >= size_) {
+        if (index < 0 || index >= size_) {
             throw std::out_of_range("LinkedList index is out of range");
         }
     }
@@ -58,24 +58,27 @@ private:
     }
 
 public:
+    //пустой конструктор
     LinkedList() : head_(nullptr), tail_(nullptr), size_(0) {}
 
+    //конструктор от массива
     LinkedList(const T* items, int count) : LinkedList() {
-        const size_t validated_сount = Check_validate_size(count);
+        const int validated_сount = Check_validate_size(count);
         if (items == nullptr && validated_сount > 0) {
             throw std::invalid_argument("LinkedList pointer cannot be null when count is positive");
         }
 
-        for (size_t i = 0; i < validated_сount; ++i) {
+        for (int i = 0; i < validated_сount; ++i) {
             Append(items[i]);
         }
     }
 
+    //конструктор копирования
     LinkedList(const LinkedList<T>& other) : LinkedList() {
         CopyFrom(other);
     }
     
-    //сделал допом
+    //сделал допом, конструктор перемещения
     LinkedList(LinkedList<T>&& other) : head_(other.head_), tail_(other.tail_), size_(other.size_) {
         other.head_ = nullptr;
         other.tail_ = nullptr;
@@ -124,8 +127,6 @@ public:
         return *this;
     }
 
-    
-
     T GetFirst() const {
         Check_empty();
         return head_->data;
@@ -140,11 +141,12 @@ public:
         return NodeAt(index)->data;
     }
 
+
     LinkedList<T>* GetSubList(int startIndex, int endIndex) const {
         Check_validate_index(startIndex);
         Check_validate_index(endIndex);
         if (startIndex > endIndex) {
-            throw std::invalid_argument("LinkedList sublist start index must not more end index");
+            throw std::invalid_argument("Start index must be not more end index");
         }
 
         auto* res = new LinkedList<T>();
@@ -156,7 +158,7 @@ public:
         return res;
     }
 
-    size_t GetLength() const {
+    int GetLength() const {
         return size_;
     }
 
@@ -206,8 +208,9 @@ public:
         if (list == nullptr) {
             return this;
         }
-        for (size_t index = 0; index < list->GetLength(); ++index) {
-            Append(list->Get(static_cast<int>(index)));
+        //была идея сделать не через get, но тогда бы я мог вне списка изменять список, а это мне не понравилось
+        for (int index = 0; index < list->GetLength(); ++index) {
+            Append(list->Get(index));
         }
         return this;
     }
