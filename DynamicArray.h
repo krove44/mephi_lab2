@@ -12,14 +12,14 @@ private:
 
     static int Check_validate_size(int size) {
         if (size < 0) {
-            throw std::invalid_argument("Invalid size");
+            throw std::invalid_argument("DynamicArray invalid size");
         }
         return size;
     }
 
-    static void Check_validate_index(int index) {  
+    void Check_validate_index(int index) const{  
         if (index < 0 || index >= size_) {
-            throw std::out_of_range("Index out of range");
+            throw std::out_of_range("DynamicArray index out of range");
         }
     }
 

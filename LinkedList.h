@@ -36,6 +36,12 @@ private:
         }
     }
 
+    void Check_validate_index_for_Insert(int index) const {  
+        if (index < 0 || index > size_) {
+            throw std::out_of_range("LinkedList index out of range");
+        }
+    }
+
     //вспомоательная функция, помогающая получить нужный элемент
     Node* NodeAt(int index) const {
         Check_validate_index(index);
@@ -63,12 +69,12 @@ public:
 
     //конструктор от массива
     LinkedList(const T* items, int count) : LinkedList() {
-        const int validated_сount = Check_validate_size(count);
-        if (items == nullptr && validated_сount > 0) {
+        int validated_count = Check_validate_size(count);
+        if (items == nullptr && validated_count > 0) {
             throw std::invalid_argument("LinkedList pointer cannot be null when count is positive");
         }
 
-        for (int i = 0; i < validated_сount; ++i) {
+        for (int i = 0; i < validated_count; ++i) {
             Append(items[i]);
         }
     }
@@ -194,7 +200,7 @@ public:
             Prepend(item);
             return;
         }
-        Check_validate_index(index);
+        Check_validate_index_for_Insert(index);
         Node* pred = NodeAt(index - 1);
         Node* newNode = new Node(item, pred->next);
         pred->next = newNode;
