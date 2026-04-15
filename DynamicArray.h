@@ -17,7 +17,7 @@ private:
         return size;
     }
 
-    static void Check_validate_index(int index) const {  
+    static void Check_validate_index(int index) {  
         if (index < 0 || index >= size_) {
             throw std::out_of_range("Index out of range");
         }
