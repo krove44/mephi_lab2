@@ -3,10 +3,25 @@ project(second_laba)
 
 set(CMAKE_CXX_STANDARD 20)
 
+include(FetchContent)
+
+FetchContent_Declare(googletest
+    URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+
+FetchContent_MakeAvailable(googletest)
+
 add_executable(second_laba
-        Sequence/ListSequence.h
-        Sequence/ArraySequence.h
-        DynamicArray.h
-        LinkedList.h
-        main.cpp
-        )
+    main.cpp
+)
+
+add_executable(tests
+    tests/DynamicArrayTests.cpp
+)
+
+target_link_libraries(tests gtest gtest_main)
+
+enable_testing()
+include(GoogleTest)
+gtest_discover_tests(tests)
+

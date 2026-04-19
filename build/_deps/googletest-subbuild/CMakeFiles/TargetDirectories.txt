@@ -1,0 +1,3 @@
+C:/Users/krove44/CLionProjects/second_laba/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+C:/Users/krove44/CLionProjects/second_laba/build/_deps/googletest-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/krove44/CLionProjects/second_laba/build/_deps/googletest-subbuild/CMakeFiles/ZERO_CHECK.dir
