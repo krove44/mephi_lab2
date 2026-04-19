@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "tests.dir\\Debug\\DynamicArrayTests.obj",
+            "outputs": [
+                "C:\\Users\\krove44\\CLionProjects\\second_laba\\build\\tests.dir\\Debug\\vc143.pdb",
+                "tests.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}

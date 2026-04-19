@@ -1,0 +1,17 @@
+DynamicArray.DefaultConstructor 3 0.00769257
+DynamicArray.SizeConstructor 4 0.00379548
+DynamicArray.NegativeSizeThrows 4 0.0048943
+DynamicArray.FromArrayConstructor 4 0.00516605
+DynamicArray.NullptrConstructorThrows 4 0.00495532
+DynamicArray.SetAndGet 4 0.00382527
+DynamicArray.OutOfRangeAccess 4 0.00340415
+DynamicArray.OperatorAccess 4 0.00387807
+DynamicArray.CopyConstructor 4 0.00296795
+DynamicArray.DeepCopy 4 0.00297557
+DynamicArray.CopyAssignment 4 0.00310248
+DynamicArray.MoveConstructor 4 0.00438263
+DynamicArray.MoveAssignment 4 0.00374985
+DynamicArray.ResizeIncrease 4 0.003746
+DynamicArray.ResizeDecrease 4 0.0038693
+DynamicArray.ResizeNegativeThrows 4 0.00511068
+---

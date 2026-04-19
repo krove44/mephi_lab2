@@ -1,0 +1,92 @@
+{
+  "tests": 16,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "DynamicArray",
+      "tests": 16,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 8
+        },
+        {
+          "name": "SizeConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 13
+        },
+        {
+          "name": "NegativeSizeThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 18
+        },
+        {
+          "name": "FromArrayConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 22
+        },
+        {
+          "name": "NullptrConstructorThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 33
+        },
+        {
+          "name": "SetAndGet",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 39
+        },
+        {
+          "name": "OutOfRangeAccess",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 49
+        },
+        {
+          "name": "OperatorAccess",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 56
+        },
+        {
+          "name": "CopyConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 65
+        },
+        {
+          "name": "DeepCopy",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 77
+        },
+        {
+          "name": "CopyAssignment",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 88
+        },
+        {
+          "name": "MoveConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 100
+        },
+        {
+          "name": "MoveAssignment",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 111
+        },
+        {
+          "name": "ResizeIncrease",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 124
+        },
+        {
+          "name": "ResizeDecrease",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 136
+        },
+        {
+          "name": "ResizeNegativeThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
+          "line": 144
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "second_laba.dir\\Debug\\main.obj",
+            "outputs": [
+                "C:\\Users\\krove44\\CLionProjects\\second_laba\\build\\second_laba.dir\\Debug\\vc143.pdb",
+                "second_laba.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}
