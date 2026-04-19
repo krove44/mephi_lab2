@@ -7,6 +7,12 @@
     <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\LinkedListTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\ArraySequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\ListSequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\krove44\CLionProjects\second_laba\CMakeLists.txt" />

@@ -418,6 +418,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\DynamicArrayTests.cpp" />
     <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\LinkedListTests.cpp" />
+    <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\ArraySequenceTests.cpp" />
+    <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\ListSequenceTests.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

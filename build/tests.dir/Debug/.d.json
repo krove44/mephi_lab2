@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\krove44\\clionprojects\\second_laba\\tests\\dynamicarraytests.cpp",
+        "Source": "c:\\users\\krove44\\clionprojects\\second_laba\\tests\\listsequencetests.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\krove44\\clionprojects\\second_laba\\build\\_deps\\googletest-src\\googletest\\include\\gtest\\gtest.h",
@@ -188,7 +188,9 @@
             "c:\\users\\krove44\\clionprojects\\second_laba\\build\\_deps\\googletest-src\\googletest\\include\\gtest\\gtest-typed-test.h",
             "c:\\users\\krove44\\clionprojects\\second_laba\\build\\_deps\\googletest-src\\googletest\\include\\gtest\\gtest_pred_impl.h",
             "c:\\users\\krove44\\clionprojects\\second_laba\\build\\_deps\\googletest-src\\googletest\\include\\gtest\\gtest_prod.h",
-            "c:\\users\\krove44\\clionprojects\\second_laba\\dynamicarray.h"
+            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\listsequence.h",
+            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\sequence.h",
+            "c:\\users\\krove44\\clionprojects\\second_laba\\linkedlist.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

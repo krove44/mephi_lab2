@@ -1,5 +1,5 @@
 {
-  "tests": 34,
+  "tests": 64,
   "name": "AllTests",
   "testsuites": [
     {
@@ -181,6 +181,168 @@
           "name": "Clear",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
           "line": 169
+        }
+      ]
+    },
+    {
+      "name": "ArraySequence",
+      "tests": 16,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "SizeConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 12
+        },
+        {
+          "name": "FromArrayConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 17
+        },
+        {
+          "name": "CopyConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 26
+        },
+        {
+          "name": "ConstructorExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 38
+        },
+        {
+          "name": "GetFirstAndLast",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 45
+        },
+        {
+          "name": "GetAndSet",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 53
+        },
+        {
+          "name": "AccessExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 62
+        },
+        {
+          "name": "Append",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 75
+        },
+        {
+          "name": "Prepend",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 84
+        },
+        {
+          "name": "InsertAt",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 93
+        },
+        {
+          "name": "InsertAtExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 105
+        },
+        {
+          "name": "GetSubsequence",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 113
+        },
+        {
+          "name": "GetSubsequenceExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 126
+        },
+        {
+          "name": "Concat",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 134
+        },
+        {
+          "name": "ConcatNullOrEmpty",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ArraySequenceTests.cpp",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "name": "ListSequence",
+      "tests": 14,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "FromLinkedListConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 12
+        },
+        {
+          "name": "CopyConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "MoveConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 34
+        },
+        {
+          "name": "GetFirstAndLast",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 46
+        },
+        {
+          "name": "GetByIndex",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 54
+        },
+        {
+          "name": "AccessExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 63
+        },
+        {
+          "name": "AppendAndPrepend",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 76
+        },
+        {
+          "name": "InsertAt",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 88
+        },
+        {
+          "name": "InsertAtExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 100
+        },
+        {
+          "name": "GetSubsequence",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 109
+        },
+        {
+          "name": "GetSubsequenceExceptions",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 122
+        },
+        {
+          "name": "Concat",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 130
+        },
+        {
+          "name": "ConcatNull",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ListSequenceTests.cpp",
+          "line": 145
         }
       ]
     }
