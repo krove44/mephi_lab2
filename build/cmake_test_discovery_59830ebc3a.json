@@ -1,5 +1,5 @@
 {
-  "tests": 16,
+  "tests": 34,
   "name": "AllTests",
   "testsuites": [
     {
@@ -85,6 +85,102 @@
           "name": "ResizeNegativeThrows",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\DynamicArrayTests.cpp",
           "line": 144
+        }
+      ]
+    },
+    {
+      "name": "LinkedList",
+      "tests": 18,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 8
+        },
+        {
+          "name": "FromArrayConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 13
+        },
+        {
+          "name": "NegativeSizeThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "NullptrConstructorThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 27
+        },
+        {
+          "name": "Append",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 33
+        },
+        {
+          "name": "Prepend",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 43
+        },
+        {
+          "name": "InsertAt",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 53
+        },
+        {
+          "name": "InsertAtBounds",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 63
+        },
+        {
+          "name": "GetAndSet",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 74
+        },
+        {
+          "name": "EmptyListThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 82
+        },
+        {
+          "name": "OutOfRangeThrows",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 88
+        },
+        {
+          "name": "GetSubList",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 99
+        },
+        {
+          "name": "Concat",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 112
+        },
+        {
+          "name": "CopyConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 126
+        },
+        {
+          "name": "MoveConstructor",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 136
+        },
+        {
+          "name": "CopyAssignment",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 145
+        },
+        {
+          "name": "MoveAssignment",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 156
+        },
+        {
+          "name": "Clear",
+          "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\LinkedListTests.cpp",
+          "line": 169
         }
       ]
     }

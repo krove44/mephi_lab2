@@ -1,10 +1,10 @@
-Start testing: Apr 19 18:08 RTZ 2 (çèìà)
+Start testing: Apr 19 18:36 RTZ 2 (çèìà)
 ----------------------------------------------------------
-1/16 Testing: DynamicArray.DefaultConstructor
-1/16 Test: DynamicArray.DefaultConstructor
+1/34 Testing: DynamicArray.DefaultConstructor
+1/34 Test: DynamicArray.DefaultConstructor
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.DefaultConstructor" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.DefaultConstructor" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.DefaultConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -23,15 +23,15 @@ Note: Google Test filter = DynamicArray.DefaultConstructor
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.DefaultConstructor" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.DefaultConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.DefaultConstructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/16 Testing: DynamicArray.SizeConstructor
-2/16 Test: DynamicArray.SizeConstructor
+2/34 Testing: DynamicArray.SizeConstructor
+2/34 Test: DynamicArray.SizeConstructor
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.SizeConstructor" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.SizeConstructor" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.SizeConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -47,18 +47,18 @@ Note: Google Test filter = DynamicArray.SizeConstructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.SizeConstructor" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.SizeConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.SizeConstructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/16 Testing: DynamicArray.NegativeSizeThrows
-3/16 Test: DynamicArray.NegativeSizeThrows
+3/34 Testing: DynamicArray.NegativeSizeThrows
+3/34 Test: DynamicArray.NegativeSizeThrows
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.NegativeSizeThrows" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.NegativeSizeThrows" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.NegativeSizeThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -71,21 +71,21 @@ Note: Google Test filter = DynamicArray.NegativeSizeThrows
 [----------] 1 test from DynamicArray (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (1 ms total)
+[==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.NegativeSizeThrows" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.NegativeSizeThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.NegativeSizeThrows" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/16 Testing: DynamicArray.FromArrayConstructor
-4/16 Test: DynamicArray.FromArrayConstructor
+4/34 Testing: DynamicArray.FromArrayConstructor
+4/34 Test: DynamicArray.FromArrayConstructor
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.FromArrayConstructor" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.FromArrayConstructor" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.FromArrayConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -101,18 +101,18 @@ Note: Google Test filter = DynamicArray.FromArrayConstructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.FromArrayConstructor" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.FromArrayConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.FromArrayConstructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/16 Testing: DynamicArray.NullptrConstructorThrows
-5/16 Test: DynamicArray.NullptrConstructorThrows
+5/34 Testing: DynamicArray.NullptrConstructorThrows
+5/34 Test: DynamicArray.NullptrConstructorThrows
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.NullptrConstructorThrows" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.NullptrConstructorThrows" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.NullptrConstructorThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -128,18 +128,18 @@ Note: Google Test filter = DynamicArray.NullptrConstructorThrows
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.NullptrConstructorThrows" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.NullptrConstructorThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.NullptrConstructorThrows" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/16 Testing: DynamicArray.SetAndGet
-6/16 Test: DynamicArray.SetAndGet
+6/34 Testing: DynamicArray.SetAndGet
+6/34 Test: DynamicArray.SetAndGet
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.SetAndGet" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.SetAndGet" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.SetAndGet" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -158,15 +158,15 @@ Note: Google Test filter = DynamicArray.SetAndGet
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.SetAndGet" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.SetAndGet" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.SetAndGet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/16 Testing: DynamicArray.OutOfRangeAccess
-7/16 Test: DynamicArray.OutOfRangeAccess
+7/34 Testing: DynamicArray.OutOfRangeAccess
+7/34 Test: DynamicArray.OutOfRangeAccess
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.OutOfRangeAccess" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.OutOfRangeAccess" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.OutOfRangeAccess" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -185,15 +185,15 @@ Note: Google Test filter = DynamicArray.OutOfRangeAccess
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.OutOfRangeAccess" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.OutOfRangeAccess" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.OutOfRangeAccess" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/16 Testing: DynamicArray.OperatorAccess
-8/16 Test: DynamicArray.OperatorAccess
+8/34 Testing: DynamicArray.OperatorAccess
+8/34 Test: DynamicArray.OperatorAccess
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.OperatorAccess" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.OperatorAccess" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.OperatorAccess" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -209,18 +209,18 @@ Note: Google Test filter = DynamicArray.OperatorAccess
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.OperatorAccess" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.OperatorAccess" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.OperatorAccess" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-9/16 Testing: DynamicArray.CopyConstructor
-9/16 Test: DynamicArray.CopyConstructor
+9/34 Testing: DynamicArray.CopyConstructor
+9/34 Test: DynamicArray.CopyConstructor
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.CopyConstructor" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.CopyConstructor" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.CopyConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -239,15 +239,15 @@ Note: Google Test filter = DynamicArray.CopyConstructor
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.CopyConstructor" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.CopyConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.CopyConstructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-10/16 Testing: DynamicArray.DeepCopy
-10/16 Test: DynamicArray.DeepCopy
+10/34 Testing: DynamicArray.DeepCopy
+10/34 Test: DynamicArray.DeepCopy
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.DeepCopy" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.DeepCopy" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.DeepCopy" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -266,15 +266,15 @@ Note: Google Test filter = DynamicArray.DeepCopy
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.DeepCopy" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.DeepCopy" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.DeepCopy" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-11/16 Testing: DynamicArray.CopyAssignment
-11/16 Test: DynamicArray.CopyAssignment
+11/34 Testing: DynamicArray.CopyAssignment
+11/34 Test: DynamicArray.CopyAssignment
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.CopyAssignment" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.CopyAssignment" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.CopyAssignment" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -293,15 +293,15 @@ Note: Google Test filter = DynamicArray.CopyAssignment
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.CopyAssignment" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.CopyAssignment" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.CopyAssignment" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-12/16 Testing: DynamicArray.MoveConstructor
-12/16 Test: DynamicArray.MoveConstructor
+12/34 Testing: DynamicArray.MoveConstructor
+12/34 Test: DynamicArray.MoveConstructor
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.MoveConstructor" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.MoveConstructor" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.MoveConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -317,18 +317,18 @@ Note: Google Test filter = DynamicArray.MoveConstructor
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.MoveConstructor" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.MoveConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.MoveConstructor" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-13/16 Testing: DynamicArray.MoveAssignment
-13/16 Test: DynamicArray.MoveAssignment
+13/34 Testing: DynamicArray.MoveAssignment
+13/34 Test: DynamicArray.MoveAssignment
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.MoveAssignment" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.MoveAssignment" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.MoveAssignment" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -347,15 +347,15 @@ Note: Google Test filter = DynamicArray.MoveAssignment
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.MoveAssignment" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.MoveAssignment" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.MoveAssignment" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-14/16 Testing: DynamicArray.ResizeIncrease
-14/16 Test: DynamicArray.ResizeIncrease
+14/34 Testing: DynamicArray.ResizeIncrease
+14/34 Test: DynamicArray.ResizeIncrease
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.ResizeIncrease" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.ResizeIncrease" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeIncrease" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -374,15 +374,15 @@ Note: Google Test filter = DynamicArray.ResizeIncrease
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.ResizeIncrease" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeIncrease" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.ResizeIncrease" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-15/16 Testing: DynamicArray.ResizeDecrease
-15/16 Test: DynamicArray.ResizeDecrease
+15/34 Testing: DynamicArray.ResizeDecrease
+15/34 Test: DynamicArray.ResizeDecrease
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.ResizeDecrease" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.ResizeDecrease" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeDecrease" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -398,18 +398,18 @@ Note: Google Test filter = DynamicArray.ResizeDecrease
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.ResizeDecrease" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeDecrease" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.ResizeDecrease" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-16/16 Testing: DynamicArray.ResizeNegativeThrows
-16/16 Test: DynamicArray.ResizeNegativeThrows
+16/34 Testing: DynamicArray.ResizeNegativeThrows
+16/34 Test: DynamicArray.ResizeNegativeThrows
 Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=DynamicArray.ResizeNegativeThrows" "--gtest_also_run_disabled_tests"
 Directory: C:/Users/krove44/CLionProjects/second_laba/build
-"DynamicArray.ResizeNegativeThrows" start time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeNegativeThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
 Output:
 ----------------------------------------------------------
 Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -425,11 +425,497 @@ Note: Google Test filter = DynamicArray.ResizeNegativeThrows
 [==========] 1 test from 1 test suite ran. (0 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"DynamicArray.ResizeNegativeThrows" end time: Apr 19 18:08 RTZ 2 (çèìà)
+"DynamicArray.ResizeNegativeThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
 "DynamicArray.ResizeNegativeThrows" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Apr 19 18:08 RTZ 2 (çèìà)
+17/34 Testing: LinkedList.DefaultConstructor
+17/34 Test: LinkedList.DefaultConstructor
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.DefaultConstructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.DefaultConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.DefaultConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.DefaultConstructor
+[       OK ] LinkedList.DefaultConstructor (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.DefaultConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.DefaultConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/34 Testing: LinkedList.FromArrayConstructor
+18/34 Test: LinkedList.FromArrayConstructor
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.FromArrayConstructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.FromArrayConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.FromArrayConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.FromArrayConstructor
+[       OK ] LinkedList.FromArrayConstructor (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.FromArrayConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.FromArrayConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/34 Testing: LinkedList.NegativeSizeThrows
+19/34 Test: LinkedList.NegativeSizeThrows
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.NegativeSizeThrows" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.NegativeSizeThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.NegativeSizeThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.NegativeSizeThrows
+[       OK ] LinkedList.NegativeSizeThrows (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.NegativeSizeThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.NegativeSizeThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/34 Testing: LinkedList.NullptrConstructorThrows
+20/34 Test: LinkedList.NullptrConstructorThrows
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.NullptrConstructorThrows" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.NullptrConstructorThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.NullptrConstructorThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.NullptrConstructorThrows
+[       OK ] LinkedList.NullptrConstructorThrows (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.NullptrConstructorThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.NullptrConstructorThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/34 Testing: LinkedList.Append
+21/34 Test: LinkedList.Append
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.Append" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.Append" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.Append
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.Append
+[       OK ] LinkedList.Append (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.Append" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.Append" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/34 Testing: LinkedList.Prepend
+22/34 Test: LinkedList.Prepend
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.Prepend" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.Prepend" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.Prepend
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.Prepend
+[       OK ] LinkedList.Prepend (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.Prepend" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.Prepend" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/34 Testing: LinkedList.InsertAt
+23/34 Test: LinkedList.InsertAt
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.InsertAt" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.InsertAt" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.InsertAt
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.InsertAt
+[       OK ] LinkedList.InsertAt (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.InsertAt" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.InsertAt" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/34 Testing: LinkedList.InsertAtBounds
+24/34 Test: LinkedList.InsertAtBounds
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.InsertAtBounds" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.InsertAtBounds" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.InsertAtBounds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.InsertAtBounds
+[       OK ] LinkedList.InsertAtBounds (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.InsertAtBounds" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.InsertAtBounds" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/34 Testing: LinkedList.GetAndSet
+25/34 Test: LinkedList.GetAndSet
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.GetAndSet" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.GetAndSet" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.GetAndSet
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.GetAndSet
+[       OK ] LinkedList.GetAndSet (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.GetAndSet" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.GetAndSet" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/34 Testing: LinkedList.EmptyListThrows
+26/34 Test: LinkedList.EmptyListThrows
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.EmptyListThrows" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.EmptyListThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.EmptyListThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.EmptyListThrows
+[       OK ] LinkedList.EmptyListThrows (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.EmptyListThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.EmptyListThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/34 Testing: LinkedList.OutOfRangeThrows
+27/34 Test: LinkedList.OutOfRangeThrows
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.OutOfRangeThrows" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.OutOfRangeThrows" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.OutOfRangeThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.OutOfRangeThrows
+[       OK ] LinkedList.OutOfRangeThrows (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.OutOfRangeThrows" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.OutOfRangeThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/34 Testing: LinkedList.GetSubList
+28/34 Test: LinkedList.GetSubList
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.GetSubList" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.GetSubList" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.GetSubList
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.GetSubList
+[       OK ] LinkedList.GetSubList (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.GetSubList" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.GetSubList" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/34 Testing: LinkedList.Concat
+29/34 Test: LinkedList.Concat
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.Concat" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.Concat" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.Concat
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.Concat
+[       OK ] LinkedList.Concat (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.Concat" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.Concat" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/34 Testing: LinkedList.CopyConstructor
+30/34 Test: LinkedList.CopyConstructor
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.CopyConstructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.CopyConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.CopyConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.CopyConstructor
+[       OK ] LinkedList.CopyConstructor (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.CopyConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.CopyConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/34 Testing: LinkedList.MoveConstructor
+31/34 Test: LinkedList.MoveConstructor
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.MoveConstructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.MoveConstructor" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.MoveConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.MoveConstructor
+[       OK ] LinkedList.MoveConstructor (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.MoveConstructor" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.MoveConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/34 Testing: LinkedList.CopyAssignment
+32/34 Test: LinkedList.CopyAssignment
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.CopyAssignment" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.CopyAssignment" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.CopyAssignment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.CopyAssignment
+[       OK ] LinkedList.CopyAssignment (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.CopyAssignment" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.CopyAssignment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/34 Testing: LinkedList.MoveAssignment
+33/34 Test: LinkedList.MoveAssignment
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.MoveAssignment" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.MoveAssignment" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.MoveAssignment
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.MoveAssignment
+[       OK ] LinkedList.MoveAssignment (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.MoveAssignment" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.MoveAssignment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/34 Testing: LinkedList.Clear
+34/34 Test: LinkedList.Clear
+Command: "C:/Users/krove44/CLionProjects/second_laba/build/Debug/tests.exe" "--gtest_filter=LinkedList.Clear" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/krove44/CLionProjects/second_laba/build
+"LinkedList.Clear" start time: Apr 19 18:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\krove44\CLionProjects\second_laba\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = LinkedList.Clear
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LinkedList
+[ RUN      ] LinkedList.Clear
+[       OK ] LinkedList.Clear (0 ms)
+[----------] 1 test from LinkedList (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LinkedList.Clear" end time: Apr 19 18:36 RTZ 2 (çèìà)
+"LinkedList.Clear" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 19 18:36 RTZ 2 (çèìà)

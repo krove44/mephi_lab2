@@ -17,6 +17,7 @@ add_executable(second_laba
 
 add_executable(tests
     tests/DynamicArrayTests.cpp
+    tests/LinkedListTests.cpp
 )
 
 target_link_libraries(tests gtest gtest_main)

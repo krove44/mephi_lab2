@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\DynamicArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\krove44\CLionProjects\second_laba\tests\LinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\krove44\CLionProjects\second_laba\CMakeLists.txt" />

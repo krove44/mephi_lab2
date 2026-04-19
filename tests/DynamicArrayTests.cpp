@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <utility>
 
-//конструкторы
+// --- Конструкторы ---
 
 TEST(DynamicArray, DefaultConstructor) {
     DynamicArray<int> arr;
@@ -34,7 +34,7 @@ TEST(DynamicArray, NullptrConstructorThrows) {
     EXPECT_THROW(DynamicArray<int>(nullptr, 3), std::invalid_argument);
 }
 
-// сетеры, гетеры
+// --- Доступ к элементам ---
 
 TEST(DynamicArray, SetAndGet) {
     DynamicArray<int> arr(3);
@@ -60,7 +60,7 @@ TEST(DynamicArray, OperatorAccess) {
     EXPECT_EQ(arr[0], 42);
 }
 
-// копирование
+// --- Копирование ---
 
 TEST(DynamicArray, CopyConstructor) {
     DynamicArray<int> a(2);
@@ -95,7 +95,7 @@ TEST(DynamicArray, CopyAssignment) {
     EXPECT_EQ(b[0], 7);
 }
 
-// мув
+// --- Перемещение ---
 
 TEST(DynamicArray, MoveConstructor) {
     DynamicArray<int> a(2);
@@ -119,7 +119,7 @@ TEST(DynamicArray, MoveAssignment) {
     EXPECT_EQ(a.GetSize(), 0);
 }
 
-// ресайз
+// --- Ресайз ---
 
 TEST(DynamicArray, ResizeIncrease) {
     DynamicArray<int> arr(2);
