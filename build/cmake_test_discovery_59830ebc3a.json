@@ -388,47 +388,47 @@
         {
           "name": "AccessExceptions",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 64
+          "line": 63
         },
         {
           "name": "Append",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 77
+          "line": 76
         },
         {
           "name": "Prepend",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 89
+          "line": 88
         },
         {
           "name": "InsertAt",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 101
+          "line": 100
         },
         {
           "name": "InsertAtExceptions",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 114
+          "line": 113
         },
         {
           "name": "GetSubsequence",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 122
+          "line": 121
         },
         {
           "name": "GetSubsequenceExceptions",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 134
+          "line": 133
         },
         {
           "name": "Concat",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 143
+          "line": 142
         },
         {
           "name": "ConcatNullOrEmpty",
           "file": "C:\\Users\\krove44\\CLionProjects\\second_laba\\tests\\ImmutableArraySequenceTests.cpp",
-          "line": 158
+          "line": 157
         }
       ]
     }

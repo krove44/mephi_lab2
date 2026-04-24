@@ -8,6 +8,7 @@ template<typename T>
 class ArraySequence : public ISequence<T> {
 private:
     DynamicArray<T> data_;
+    int cupsize;
     static int Check_validate_size(int size) {
         if (size < 0) {
             throw std::invalid_argument("ArraySequence invalid size");
@@ -16,13 +17,13 @@ private:
     }
 
     void Check_validate_index(int index) const {  
-        if (index < 0 || index >= data_.GetSize()) {
+        if (index < 0 || index >= cupsize) {
             throw std::out_of_range("ArraySequence index out of range");
         }
     }
 
     void Check_validate_index_for_Insert(int index) const {  
-        if (index < 0 || index > data_.GetSize()) {
+        if (index < 0 || index > cupsize) {
             throw std::out_of_range("ArraySequence index out of range");
         }
     }
@@ -33,16 +34,16 @@ private:
         }
     }
     void Check_empty() const {
-        if (data_.GetSize() == 0) {
+        if (cupsize == 0) {
             throw std::logic_error("ArraySequence is empty");
         }
     }
     
 public:
 
-    ArraySequence() : data_(){};
+    ArraySequence() : data_(), cupsize(0){};
 
-    ArraySequence(T* items, int count) : data_(Check_validate_size(count)) {
+    ArraySequence(T* items, int count) : data_(Check_validate_size(count)), cupsize(count) {
         if (items == nullptr && count > 0){
             throw std::invalid_argument("ArraySequence bad ptr");
         }
@@ -51,9 +52,9 @@ public:
         }
     };
 
-    ArraySequence(int len) : data_(Check_validate_size(len)){};
+    ArraySequence(int len) : data_(Check_validate_size(len)), cupsize(len){};
 
-    ArraySequence(const ArraySequence<T>& other) : data_(other.data_){};
+    ArraySequence(const ArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
     T GetFirst() const override {
         Check_empty();
@@ -62,8 +63,7 @@ public:
 
     T GetLast() const override {
         Check_empty();
-        Check_validate_index(data_.GetSize()-1);
-        return data_.Get(data_.GetSize()-1);
+        return data_.Get(cupsize-1);
     };
 
     T Get(int index) const override {
@@ -88,35 +88,40 @@ public:
     };
 
     int GetLength() const override {
-        return data_.GetSize();
+        return cupsize;
     };
 
     ArraySequence<T>* Append(T item) override {
-        data_.Resize(data_.GetSize() + 1);
-        data_.Set(data_.GetSize() - 1, item);
+        if (cupsize == data_.GetSize()){
+            data_.Resize(2*cupsize);
+        }
+        data_.Set(cupsize - 1, item);
+        cupsize++;
         return this;
     };
 
     ArraySequence<T>* Prepend(T item) override {
-        DynamicArray<T> new_data(data_.GetSize() + 1);
+        DynamicArray<T> new_data(cupsize + 1);
         new_data[0] = item;
-        for(int i = 0; i < data_.GetSize(); ++i){
+        for(int i = 0; i < cupsize; ++i){
             new_data[i + 1] = data_[i];
         }
+        cupsize++;
         data_ = std::move(new_data);
         return this;
     };
 
     ArraySequence<T>* InsertAt(T item, int index) override {
         Check_validate_index_for_Insert(index);
-        DynamicArray<T> new_data(data_.GetSize() + 1);
+        DynamicArray<T> new_data(cupsize + 1);
         new_data[index] = item;
         for (int i = 0; i < index; ++i){
             new_data[i] = data_[i];
         }
-        for (int i = index; i < data_.GetSize(); ++i){
+        for (int i = index; i < cupsize; ++i){
             new_data[i+1] = data_[i];
         }
+        cupsize++;
         data_ = std::move(new_data);
         return this;
     };
@@ -125,12 +130,13 @@ public:
         if (list == nullptr || list->GetLength() == 0){
             return this;
         }
-        int old_size = data_.GetSize();
+        int old_size = cupsize;
         int new_size = (old_size + list->GetLength());
         data_.Resize(new_size);
         for (int i = old_size; i < new_size; ++i){
             data_[i] = list->Get(i - old_size);
         }
+        cupsize = new_size;
         return this;
     };
 

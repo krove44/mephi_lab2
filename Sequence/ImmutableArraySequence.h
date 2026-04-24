@@ -9,6 +9,7 @@ template<typename T>
 class ImmutableArraySequence : public ImmutableISequence<T>{
 private:
     DynamicArray<T> data_;
+    int cupsize;
     static int Check_validate_size(int size) {
         if (size < 0) {
             throw std::invalid_argument("ImmutableArraySequence invalid size");
@@ -17,13 +18,13 @@ private:
     }
 
     void Check_validate_index(int index) const {  
-        if (index < 0 || index >= data_.GetSize()) {
+        if (index < 0 || index >= cupsize) {
             throw std::out_of_range("ImmutableArraySequence index out of range");
         }
     }
 
     void Check_validate_index_for_Insert(int index) const {  
-        if (index < 0 || index > data_.GetSize()) {
+        if (index < 0 || index > cupsize) {
             throw std::out_of_range("ImmutableArraySequence index out of range");
         }
     }
@@ -34,7 +35,7 @@ private:
         }
     }
     void Check_empty() const {
-        if (data_.GetSize() == 0) {
+        if (cupsize == 0) {
             throw std::logic_error("ImmutableArraySequence is empty");
         }
     }
@@ -43,7 +44,7 @@ public:
 
     ImmutableArraySequence() : data_(){};
 
-    ImmutableArraySequence(T* items, int count) : data_(Check_validate_size(count)) {
+    ImmutableArraySequence(T* items, int count) : data_(Check_validate_size(count)), cupsize(count) {
         if (items == nullptr && count > 0){
             throw std::invalid_argument("ImmutableArraySequence bad ptr");
         }
@@ -52,9 +53,9 @@ public:
         }
     };
 
-    ImmutableArraySequence(int len) : data_(Check_validate_size(len)){};
+    ImmutableArraySequence(int len) : data_(Check_validate_size(len)), cupsize(len){};
 
-    ImmutableArraySequence(const ImmutableArraySequence<T>& other) : data_(other.data_){};
+    ImmutableArraySequence(const ImmutableArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
     T GetFirst() const override {
         Check_empty();
@@ -63,8 +64,7 @@ public:
 
     T GetLast() const override {
         Check_empty();
-        Check_validate_index(data_.GetSize()-1);
-        return data_.Get(data_.GetSize()-1);
+        return data_.Get(cupsize-1);
     };
 
     T Get(int index) const override {
@@ -91,7 +91,7 @@ public:
     };
 
     int GetLength() const override {
-        return data_.GetSize();
+        return cupsize;
     };
 
     std::unique_ptr<ImmutableISequence<T>> Append(T item) const override {
