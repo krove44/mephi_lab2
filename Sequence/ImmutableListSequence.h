@@ -11,25 +11,25 @@ private:
     LinkedList<T> data_;
     void Check_empty() const {
         if (data_.GetLength() == 0) {
-            throw std::logic_error("ListSequence is empty");
+            throw std::logic_error("ImmutableListSequence is empty");
         }
     }
 
     void Check_validate_index(int index) const {
         if (index < 0 || index >= data_.GetLength()) {
-            throw std::out_of_range("ListSequence index is out of range");
+            throw std::out_of_range("ImmutableListSequence index is out of range");
         }
     }
 
     void Check_validate_index_for_Insert(int index) const {  
         if (index < 0 || index > data_.GetLength()) {
-            throw std::out_of_range("ListSequence index out of range");
+            throw std::out_of_range("ImmutableListSequence index out of range");
         }
     }
 
     static void Check_validate_startIndex_and_endIndex(int startIndex, int endIndex) {  
         if (startIndex > endIndex) {
-            throw std::out_of_range("ListSequence have bad startIndex & endIndex");
+            throw std::out_of_range("ImmutableListSequence have bad startIndex & endIndex");
         }
     } 
 public:
