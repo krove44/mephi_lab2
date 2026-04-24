@@ -131,7 +131,9 @@
             "c:\\users\\krove44\\clionprojects\\second_laba\\linkedlist.h",
             "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\listsequence.h",
             "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\sequence.h",
-            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\arraysequence.h"
+            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\arraysequence.h",
+            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\immutablearraysequence.h",
+            "c:\\users\\krove44\\clionprojects\\second_laba\\sequence\\immutablelistsequence.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
