@@ -20,6 +20,7 @@ add_executable(tests
     tests/LinkedListTests.cpp
     tests/ArraySequenceTests.cpp
     tests/ListSequenceTests.cpp
+    tests/ImmutableArraySequenceTests.cpp
 )
 
 target_link_libraries(tests gtest gtest_main)
