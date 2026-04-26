@@ -35,6 +35,7 @@ add_executable(tests
     tests/ArraySequenceTests.cpp
     tests/ListSequenceTests.cpp
     tests/ImmutableArraySequenceTests.cpp
+    tests/ImmutableLinkedListTests.cpp
 )
 
 target_link_libraries(tests PRIVATE gtest gtest_main)

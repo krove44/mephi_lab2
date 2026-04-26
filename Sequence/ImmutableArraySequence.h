@@ -42,7 +42,7 @@ private:
     
 public:
 
-    ImmutableArraySequence() : data_(){};
+    ImmutableArraySequence() : data_(), cupsize(0){};
 
     ImmutableArraySequence(T* items, int count) : data_(Check_validate_size(count)), cupsize(count) {
         if (items == nullptr && count > 0){
