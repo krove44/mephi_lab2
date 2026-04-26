@@ -1,0 +1,32 @@
+#Build директории
+build/
+cmake-build-*/
+out/
+
+#CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+#Бинарные файлы
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+*.a
+*.lib
+
+#Логи
+*.log
+
+#IDE
+.idea/
+.vscode/
+
+#OS мусор
+.DS_Store
+Thumbs.db
