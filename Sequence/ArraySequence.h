@@ -33,6 +33,7 @@ private:
             throw std::out_of_range("ArraySequence have bad startIndex & endIndex");
         }
     }
+    
     void Check_empty() const {
         if (cupsize == 0) {
             throw std::logic_error("ArraySequence is empty");
