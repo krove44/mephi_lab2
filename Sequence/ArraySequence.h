@@ -94,9 +94,9 @@ public:
 
     ArraySequence<T>* Append(T item) override {
         if (cupsize == data_.GetSize()){
-            data_.Resize(2*cupsize);
+            data_.Resize(cupsize == 0 ? 1 : 2 * cupsize);
         }
-        data_.Set(cupsize - 1, item);
+        data_.Set(cupsize, item);
         cupsize++;
         return this;
     };
