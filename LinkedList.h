@@ -10,30 +10,20 @@ private:
     struct Node {
         T data;
         Node* next;
+        //написал для букалина
+        Node* prev;//TODO: сделай для него тоже реализацию
         Node(const T& value, Node* nextNode = nullptr) : data(value), next(nextNode) {}
     };
 
     Node* head_;
     Node* tail_;
 
-    void Check_empty() const {
+    void check_empty() const {
         if (head_ == nullptr) {
             throw std::logic_error("LinkedList is empty");
         }
     }
-
-    //вспомоательная функция, помогающая получить нужный элемент
-    Node* NodeAt(size_t index) const {//TODO: лучше оператор
-        Check_validate_index(index);
-
-        Node* current = head_;
-        for (size_t i = 0; i < index; ++i) {
-            current = current->next;
-        }
-
-        return current;
-    }
-
+    
     //вспомогательная функция копирования всех элементов из чужого в себя
     void CopyFrom(const LinkedList<T>& other) {//TODO: убрать и сделать по итератору
         Node* current = other.head_;
@@ -107,6 +97,17 @@ public:
         other.head_ = nullptr;
         other.tail_ = nullptr;
         return *this;
+    }
+
+    Node* operator[](size_t index) {
+        Node* current = head_;
+        for (size_t i = 0; i < index; ++i) {
+            if (current == nullptr){
+                throw std::invalid_argument("LinkedList have bad index");
+            }
+            current = current->next;
+        }
+        return current;
     }
 
     T GetFirst() const {
