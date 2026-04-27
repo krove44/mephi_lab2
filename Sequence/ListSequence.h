@@ -14,19 +14,19 @@ private:
         }
     }
 
-    void Check_validate_index(int index) const {
+    void Check_validate_index(size_t index) const {
         if (index < 0 || index >= data_.GetLength()) {
             throw std::out_of_range("ListSequence index is out of range");
         }
     }
 
-    void Check_validate_index_for_Insert(int index) const {  
+    void Check_validate_index_for_Insert(size_t index) const {  
         if (index < 0 || index > data_.GetLength()) {
             throw std::out_of_range("ListSequence index out of range");
         }
     }
 
-    static void Check_validate_startIndex_and_endIndex(int startIndex, int endIndex) {  
+    static void Check_validate_startIndex_and_endIndex(size_t startIndex, size_t endIndex) {  
         if (startIndex > endIndex) {
             throw std::out_of_range("ListSequence have bad startIndex & endIndex");
         }
@@ -50,12 +50,12 @@ public:
         return data_.GetLast();
     };
 
-    T Get(int index) const override {
+    T Get(size_t index) const override {
         Check_validate_index(index);
         return data_.Get(index);
     };
 
-    ListSequence<T>* GetSubsequence(int startIndex, int endIndex) const override {
+    ListSequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const override {
         Check_validate_index(startIndex);
         Check_validate_index(endIndex);
         Check_validate_startIndex_and_endIndex(startIndex, endIndex);
@@ -65,7 +65,7 @@ public:
         return new_list;
     }; 
 
-    int GetLength() const override {
+    size_t GetLength() const override {
         return data_.GetLength();
     };
 
@@ -79,7 +79,7 @@ public:
         return this;
     };
 
-    ListSequence<T>* InsertAt(T item, int index) override {
+    ListSequence<T>* InsertAt(T item, size_t index) override {
         Check_validate_index_for_Insert(index);
         data_.InsertAt(item, index);
         return this;
@@ -89,7 +89,7 @@ public:
         if (list == nullptr){
             return this;
         }
-        for (int i = 0; i < list->GetLength(); ++i) {
+        for (size_t i = 0; i < list->GetLength(); ++i) {
             data_.Append(list->Get(i));
         }   
         return this;

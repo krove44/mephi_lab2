@@ -8,27 +8,21 @@ template<typename T>
 class ArraySequence : public ISequence<T> {
 private:
     DynamicArray<T> data_;
-    int cupsize;
-    static int Check_validate_size(int size) {
-        if (size < 0) {
-            throw std::invalid_argument("ArraySequence invalid size");
-        }
-        return size;
-    }
-
-    void Check_validate_index(int index) const {  
+    size_t cupsize; //TODO: сменить на size_t
+    
+    void Check_validate_index(size_t index) const {  
         if (index < 0 || index >= cupsize) {
             throw std::out_of_range("ArraySequence index out of range");
         }
     }
 
-    void Check_validate_index_for_Insert(int index) const {  
+    void Check_validate_index_for_Insert(size_t index) const {  
         if (index < 0 || index > cupsize) {
             throw std::out_of_range("ArraySequence index out of range");
         }
     }
 
-    static void Check_validate_startIndex_and_endIndex(int startIndex, int endIndex) {  
+    static void Check_validate_startIndex_and_endIndex(size_t startIndex, size_t endIndex) {  
         if (startIndex > endIndex) {
             throw std::out_of_range("ArraySequence have bad startIndex & endIndex");
         }
@@ -42,18 +36,20 @@ private:
     
 public:
 
-    ArraySequence() : data_(), cupsize(0){};
+    ArraySequence() : data_{}, cupsize(0){
+        // DynamicArray<T> data();
+    }
 
-    ArraySequence(T* items, int count) : data_(Check_validate_size(count)), cupsize(count) {
+    ArraySequence(T* items, size_t count) : data_(Check_validate_size(count)), cupsize(count) {
         if (items == nullptr && count > 0){
             throw std::invalid_argument("ArraySequence bad ptr");
         }
-        for (int i = 0; i < count; i++){
+        for (size_t i = 0; i < count; i++){//TODO: использовать итератор
             data_.Set(i, items[i]);
         }
     };
 
-    ArraySequence(int len) : data_(Check_validate_size(len)), cupsize(len){};
+    ArraySequence(size_t len) : data_(Check_validate_size(len)), cupsize(len){};
 
     ArraySequence(const ArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
@@ -67,28 +63,28 @@ public:
         return data_.Get(cupsize-1);
     };
 
-    T Get(int index) const override {
+    T Get(size_t index) const override {
         Check_validate_index(index);
         return data_.Get(index);
     };
 
-    void Set(const int& index, const T& value) {
+    void Set(const size_t& index, const T& value) {
         Check_validate_index(index);
         data_.Set(index, value);
     }
 
-    ArraySequence<T>* GetSubsequence(int startIndex, int endIndex) const override {
+    ArraySequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const override {//TODO: заменить на size_t
         Check_validate_index(startIndex);
         Check_validate_index(endIndex);
         Check_validate_startIndex_and_endIndex(startIndex, endIndex);
         ArraySequence<T>* new_data = new ArraySequence<T>(endIndex-startIndex + 1);
-        for(int i = 0; i < endIndex-startIndex + 1; ++i){
+        for(size_t i = 0; i < endIndex-startIndex + 1; ++i){
             new_data->Set(i, data_.Get(startIndex + i));
         }
         return new_data;
     };
 
-    int GetLength() const override {
+    size_t GetLength() const override {//TODO: заменить на size_t
         return cupsize;
     };
 
@@ -104,7 +100,7 @@ public:
     ArraySequence<T>* Prepend(T item) override {
         DynamicArray<T> new_data(cupsize + 1);
         new_data[0] = item;
-        for(int i = 0; i < cupsize; ++i){
+        for(size_t i = 0; i < cupsize; ++i){
             new_data[i + 1] = data_[i];
         }
         cupsize++;
@@ -112,14 +108,14 @@ public:
         return this;
     };
 
-    ArraySequence<T>* InsertAt(T item, int index) override {
+    ArraySequence<T>* InsertAt(T item, size_t index) override {
         Check_validate_index_for_Insert(index);
         DynamicArray<T> new_data(cupsize + 1);
         new_data[index] = item;
-        for (int i = 0; i < index; ++i){
+        for (size_t i = 0; i < index; ++i){
             new_data[i] = data_[i];
         }
-        for (int i = index; i < cupsize; ++i){
+        for (size_t i = index; i < cupsize; ++i){
             new_data[i+1] = data_[i];
         }
         cupsize++;
@@ -127,14 +123,14 @@ public:
         return this;
     };
 
-    ArraySequence<T>* Concat(const ISequence<T>* list) override {
+    ArraySequence<T>* Concat(const ISequence<T>* list) override {//TODO: переписать на итераторы
         if (list == nullptr || list->GetLength() == 0){
             return this;
         }
-        int old_size = cupsize;
-        int new_size = (old_size + list->GetLength());
+        size_t old_size = cupsize;
+        size_t new_size = (old_size + list->GetLength());
         data_.Resize(new_size);
-        for (int i = old_size; i < new_size; ++i){
+        for (size_t i = old_size; i < new_size; ++i){
             data_[i] = list->Get(i - old_size);
         }
         cupsize = new_size;
@@ -150,7 +146,7 @@ public:
 
     //     ArraySequence<T2>* res = new ArraySequence<T2>();
 
-    //     for (int i = 0; i < data_.GetSize(); ++i){
+    //     for (size_t i = 0; i < data_.GetSize(); ++i){
     //         res->Append(func(data_.Get(i))); 
     //     }
 

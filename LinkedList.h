@@ -6,48 +6,28 @@
 template <typename T>
 class LinkedList {
 private:
+
     struct Node {
         T data;
         Node* next;
-    
-        explicit Node(const T& value, Node* nextNode = nullptr) : data(value), next(nextNode) {}
+        Node(const T& value, Node* nextNode = nullptr) : data(value), next(nextNode) {}
     };
 
     Node* head_;
     Node* tail_;
-    int size_;
-
-    static int Check_validate_size(int count) {
-        if (count < 0) {
-            throw std::invalid_argument("Invalid size");
-        }
-        return count;
-    }
 
     void Check_empty() const {
-        if (size_ == 0) {
+        if (head_ == nullptr) {
             throw std::logic_error("LinkedList is empty");
         }
     }
 
-    void Check_validate_index(int index) const {
-        if (index < 0 || index >= size_) {
-            throw std::out_of_range("LinkedList index is out of range");
-        }
-    }
-
-    void Check_validate_index_for_Insert(int index) const {  
-        if (index < 0 || index > size_) {
-            throw std::out_of_range("LinkedList index out of range");
-        }
-    }
-
     //вспомоательная функция, помогающая получить нужный элемент
-    Node* NodeAt(int index) const {
+    Node* NodeAt(size_t index) const {//TODO: лучше оператор
         Check_validate_index(index);
 
         Node* current = head_;
-        for (int i = 0; i < index; ++i) {
+        for (size_t i = 0; i < index; ++i) {
             current = current->next;
         }
 
@@ -55,7 +35,7 @@ private:
     }
 
     //вспомогательная функция копирования всех элементов из чужого в себя
-    void CopyFrom(const LinkedList<T>& other) {
+    void CopyFrom(const LinkedList<T>& other) {//TODO: убрать и сделать по итератору
         Node* current = other.head_;
         while (current != nullptr) {
             Append(current->data);
@@ -65,16 +45,16 @@ private:
 
 public:
     //пустой конструктор
-    LinkedList() : head_(nullptr), tail_(nullptr), size_(0) {}
+    LinkedList() : head_(nullptr), tail_(nullptr) {}
 
     //конструктор от массива
-    LinkedList(const T* items, int count) : LinkedList() {
-        int validated_count = Check_validate_size(count);
+    LinkedList(const T* items, size_t count) : LinkedList() {
+        size_t validated_count = Check_validate_size(count);
         if (items == nullptr && validated_count > 0) {
-            throw std::invalid_argument("LinkedList pointer cannot be null when count is positive");
+            throw std::invalid_argument("LinkedList ptr cannot be null when count is positive");
         }
 
-        for (int i = 0; i < validated_count; ++i) {
+        for (size_t i = 0; i < validated_count; ++i) {
             Append(items[i]);
         }
     }
@@ -85,10 +65,9 @@ public:
     }
     
     //сделал допом, конструктор перемещения
-    LinkedList(LinkedList<T>&& other) : head_(other.head_), tail_(other.tail_), size_(other.size_) {
+    LinkedList(LinkedList<T>&& other) : head_(other.head_), tail_(other.tail_) {
         other.head_ = nullptr;
         other.tail_ = nullptr;
-        other.size_ = 0;
     }
 
     ~LinkedList() {
@@ -105,7 +84,6 @@ public:
 
         head_ = nullptr;
         tail_ = nullptr;
-        size_ = 0;
     }
 
     LinkedList<T>& operator=(const LinkedList<T>& other) {
@@ -126,10 +104,8 @@ public:
         Clear();
         head_ = other.head_;
         tail_ = other.tail_;
-        size_ = other.size_;
         other.head_ = nullptr;
         other.tail_ = nullptr;
-        other.size_ = 0;
         return *this;
     }
 
@@ -143,12 +119,12 @@ public:
         return tail_->data;
     }
 
-    T Get(int index) const {
+    T Get(size_t index) const {
         return NodeAt(index)->data;
     }
 
 
-    LinkedList<T>* GetSubList(int startIndex, int endIndex) const {
+    LinkedList<T>* GetSubList(size_t startIndex, size_t endIndex) const {
         Check_validate_index(startIndex);
         Check_validate_index(endIndex);
         if (startIndex > endIndex) {
@@ -157,18 +133,24 @@ public:
 
         auto* res = new LinkedList<T>();
         Node* current = NodeAt(startIndex);
-        for (int index = startIndex; index <= endIndex; index++) {
+        for (size_t index = startIndex; index <= endIndex; index++) {
             res->Append(current->data);
             current = current->next;
         }
         return res;
     }
-
-    int GetLength() const {
-        return size_;
+    //TODO: оператор квадратные скобки
+    size_t GetLength() const {
+        size_t count{};
+        Node* cur = head_;
+        for(;cur != nullptr;) {
+            ++count;
+            cur = cur->next;
+        }
+        return count;
     }
 
-    void Set(int index, const T& value) {
+    void Set(size_t index, const T& value) {
         NodeAt(index)->data = value;
     }
 
@@ -177,14 +159,13 @@ public:
         if (head_ == nullptr) {
             head_ = newNode;
             tail_ = newNode;
-            ++size_;
             return;
         }
 
         tail_->next = newNode;
         tail_ = newNode;
-        ++size_;
     }
+    //TODO: итераторы
 
     void Prepend(const T& item) {
         Node* newNode = new Node(item, head_);
@@ -192,10 +173,9 @@ public:
         if (tail_ == nullptr) {
             tail_ = newNode;
         }
-        ++size_;
     }
 
-    void InsertAt(const T& item, int index) {
+    void InsertAt(const T& item, size_t index) {
         if (index == 0) {
             Prepend(item);
             return;
@@ -207,7 +187,6 @@ public:
         if (newNode->next == nullptr) {
             tail_ = newNode;
         }
-        ++size_;
     }
 
     LinkedList<T>* Concat(const LinkedList<T>* list) {
@@ -215,7 +194,7 @@ public:
             return this;
         }
         //была идея сделать не через get, но тогда бы я мог вне списка изменять список, а это мне не понравилось
-        for (int index = 0; index < list->GetLength(); ++index) {
+        for (size_t index = 0; index < list->GetLength(); ++index) {
             Append(list->Get(index));
         }
         return this;
