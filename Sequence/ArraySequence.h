@@ -8,37 +8,11 @@ template<typename T>
 class ArraySequence : public ISequence<T> {
 private:
     DynamicArray<T> data_;
-    size_t cupsize; //TODO: сменить на size_t
-    
-    void Check_validate_index(size_t index) const {  
-        if (index < 0 || index >= cupsize) {
-            throw std::out_of_range("ArraySequence index out of range");
-        }
-    }
-
-    void Check_validate_index_for_Insert(size_t index) const {  
-        if (index < 0 || index > cupsize) {
-            throw std::out_of_range("ArraySequence index out of range");
-        }
-    }
-
-    static void Check_validate_startIndex_and_endIndex(size_t startIndex, size_t endIndex) {  
-        if (startIndex > endIndex) {
-            throw std::out_of_range("ArraySequence have bad startIndex & endIndex");
-        }
-    }
-    
-    void Check_empty() const {
-        if (cupsize == 0) {
-            throw std::logic_error("ArraySequence is empty");
-        }
-    }
+    size_t cupsize;
     
 public:
 
-    ArraySequence() : data_{}, cupsize(0){
-        // DynamicArray<T> data();
-    }
+    ArraySequence() : data_{}, cupsize(0){};
 
     ArraySequence(T* items, size_t count) : data_(Check_validate_size(count)), cupsize(count) {
         if (items == nullptr && count > 0){
