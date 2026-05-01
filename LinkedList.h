@@ -1,18 +1,19 @@
 #pragma once
 
+#include <chrono>
 #include <cstddef>
+#include <exception>
 #include <stdexcept>
+#include <utility>
 
 template <typename T>
 class LinkedList {
 private:
-
     struct Node {
         T data;
         Node* next;
-        //написал для букалина
-        Node* prev;//TODO: сделай для него тоже реализацию
-        Node(const T& value, Node* nextNode = nullptr) : data(value), next(nextNode) {}
+        Node* prev;
+        Node(const T& value, Node* nextNode = nullptr, Node* prevNode = nullptr) : data(value), next(nextNode), prev(prevNode) {}
     };
 
     Node* head_;
@@ -23,35 +24,96 @@ private:
             throw std::logic_error("LinkedList is empty");
         }
     }
-    
-    //вспомогательная функция копирования всех элементов из чужого в себя
-    void CopyFrom(const LinkedList<T>& other) {//TODO: убрать и сделать по итератору
-        Node* current = other.head_;
-        while (current != nullptr) {
-            Append(current->data);
-            current = current->next;
-        }
-    }
 
+    void clear() {
+        Node* current = head_;
+        while (current != nullptr) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+        head_ = nullptr;
+        tail_ = nullptr;
+    }
+    
+    class Iterator {
+        private:
+            Node* cur;
+            friend class LinkedList<T>;
+
+        public:
+            Iterator(Node* arg) : cur(arg){};
+
+            //TODO: подумай над реализацией
+
+            Iterator operator+(int n) {
+                auto copy = *this;
+                for (size_t i = 0; i < n; ++i){
+                    if (copy.cur == nullptr){
+                        throw std::logic_error("bad arg for iterator");
+                    }
+                    copy.cur = copy.cur->next;
+                }
+                return copy;
+            } 
+            Iterator operator-(int n) {
+                auto copy = *this;
+                for (size_t i = n; i > 0; --i){
+                    if (copy.cur == nullptr){
+                        throw std::logic_error("bad arg for iterator");
+                    }
+                    copy.cur = copy.cur->prev;
+                }
+                return copy;
+            } 
+
+            Iterator& operator++() {
+                cur = cur->next;
+                return *this;
+            } 
+            Iterator& operator--() {
+                cur = cur->prev;
+                return *this;
+            } 
+            Iterator operator++(int) {
+                auto old = *this;
+                cur = cur->next;
+                return old;
+            } 
+            Iterator operator--(int) {
+                auto old = *this;
+                cur = cur->prev;
+                return old;
+            }
+
+            bool operator==(const Iterator& other){
+                return cur == other.cur;
+            };
+            bool operator!=(const Iterator& other){
+                return cur != other.cur;
+            };
+            T& operator*(){return cur->data;}
+        };
+    Iterator begin() const {return Iterator(head_);};
+    Iterator end() const{return Iterator(nullptr);};
 public:
     //пустой конструктор
     LinkedList() : head_(nullptr), tail_(nullptr) {}
 
     //конструктор от массива
     LinkedList(const T* items, size_t count) : LinkedList() {
-        size_t validated_count = Check_validate_size(count);
-        if (items == nullptr && validated_count > 0) {
+        if (items == nullptr && count > 0) {
             throw std::invalid_argument("LinkedList ptr cannot be null when count is positive");
         }
 
-        for (size_t i = 0; i < validated_count; ++i) {
+        for (size_t i = 0; i < count; ++i) {
             Append(items[i]);
         }
     }
 
     //конструктор копирования
     LinkedList(const LinkedList<T>& other) : LinkedList() {
-        CopyFrom(other);
+        for (auto it = other.begin(); it != other.end(); Append(*it), it++){};
     }
     
     //сделал допом, конструктор перемещения
@@ -61,28 +123,17 @@ public:
     }
 
     ~LinkedList() {
-        Clear();
+        clear();
     }
     
-    void Clear() {
-        Node* current = head_;
-        while (current != nullptr) {
-            Node* nextNode = current->next;
-            delete current;
-            current = nextNode;
-        }
-
-        head_ = nullptr;
-        tail_ = nullptr;
-    }
-
     LinkedList<T>& operator=(const LinkedList<T>& other) {
         if (this == &other) {
             return *this;
         }
 
-        Clear();
-        CopyFrom(other);
+        auto copy = LinkedList{other};
+        std::swap(head_, copy.head_);
+        std::swap(tail_, copy.tail_);
         return *this;
     }
 
@@ -91,7 +142,7 @@ public:
             return *this;
         }
 
-        Clear();
+        clear();
         head_ = other.head_;
         tail_ = other.tail_;
         other.head_ = nullptr;
@@ -100,80 +151,86 @@ public:
     }
 
     Node* operator[](size_t index) {
-        Node* current = head_;
+        auto it = begin();
         for (size_t i = 0; i < index; ++i) {
-            if (current == nullptr){
-                throw std::invalid_argument("LinkedList have bad index");
+            if (it.cur == nullptr){
+                throw std::invalid_argument("bad argumennt in operator");
             }
-            current = current->next;
+            it++;
         }
-        return current;
+        return it.cur;
+    }
+
+    const Node* operator[](size_t index) const {
+        auto it = begin();
+        for (size_t i = 0; i < index; ++i) {
+            if (it.cur == nullptr){
+                throw std::invalid_argument("bad argumennt in operator");
+            }
+            it++;
+        }
+        return it.cur;
     }
 
     T GetFirst() const {
-        Check_empty();
+        check_empty();
         return head_->data;
     }
 
     T GetLast() const {
-        Check_empty();
+        check_empty();
         return tail_->data;
     }
 
     T Get(size_t index) const {
-        return NodeAt(index)->data;
+        return this->operator[](index)->data;
     }
 
 
     LinkedList<T>* GetSubList(size_t startIndex, size_t endIndex) const {
-        Check_validate_index(startIndex);
-        Check_validate_index(endIndex);
         if (startIndex > endIndex) {
             throw std::invalid_argument("Start index must be not more end index");
         }
 
         auto* res = new LinkedList<T>();
-        Node* current = NodeAt(startIndex);
-        for (size_t index = startIndex; index <= endIndex; index++) {
-            res->Append(current->data);
-            current = current->next;
-        }
+        for(auto it = begin() + startIndex; it != (begin() + endIndex); res->Append(it.cur->data), it++){};
         return res;
     }
-    //TODO: оператор квадратные скобки
+
+
     size_t GetLength() const {
         size_t count{};
-        Node* cur = head_;
-        for(;cur != nullptr;) {
-            ++count;
-            cur = cur->next;
-        }
+        for(auto cur = begin(); cur != end(); cur++, count++){}
         return count;
     }
 
     void Set(size_t index, const T& value) {
-        NodeAt(index)->data = value;
+        (this->operator[](index))->data = value;
     }
 
     void Append(const T& item) {
         Node* newNode = new Node(item);
         if (head_ == nullptr) {
             head_ = newNode;
+            head_->prev = nullptr;
             tail_ = newNode;
             return;
         }
 
         tail_->next = newNode;
+        (tail_->next)->prev = tail_;
         tail_ = newNode;
     }
-    //TODO: итераторы
 
     void Prepend(const T& item) {
         Node* newNode = new Node(item, head_);
-        head_ = newNode;
-        if (tail_ == nullptr) {
+        if(head_ == nullptr){
+            head_ = newNode;
             tail_ = newNode;
+            return;
         }
+        head_->prev = newNode;
+        head_ = newNode;
     }
 
     void InsertAt(const T& item, size_t index) {
@@ -181,20 +238,22 @@ public:
             Prepend(item);
             return;
         }
-        Check_validate_index_for_Insert(index);
-        Node* pred = NodeAt(index - 1);
+        Node* pred = this->operator[](index-1);
         Node* newNode = new Node(item, pred->next);
         pred->next = newNode;
+        newNode->prev = pred;
         if (newNode->next == nullptr) {
             tail_ = newNode;
+            return;
         }
+        newNode->next->prev = newNode;
+        
     }
 
     LinkedList<T>* Concat(const LinkedList<T>* list) {
         if (list == nullptr) {
             return this;
         }
-        //была идея сделать не через get, но тогда бы я мог вне списка изменять список, а это мне не понравилось
         for (size_t index = 0; index < list->GetLength(); ++index) {
             Append(list->Get(index));
         }
