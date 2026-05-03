@@ -8,29 +8,13 @@ template<typename T>
 class ImmutableListSequence : public ImmutableISequence<T> {
 private:
     LinkedList<T> data_;
-    void Check_empty() const {
+
+    void сheck_empty() const {
         if (data_.GetLength() == 0) {
             throw std::logic_error("ImmutableListSequence is empty");
         }
     }
 
-    void Check_validate_index(size_t index) const {
-        if (index < 0 || index >= data_.GetLength()) {
-            throw std::out_of_range("ImmutableListSequence index is out of range");
-        }
-    }
-
-    void Check_validate_index_for_Insert(size_t index) const {  
-        if (index < 0 || index > data_.GetLength()) {
-            throw std::out_of_range("ImmutableListSequence index out of range");
-        }
-    }
-
-    static void Check_validate_startIndex_and_endIndex(size_t startIndex, size_t endIndex) {  
-        if (startIndex > endIndex) {
-            throw std::out_of_range("ImmutableListSequence have bad startIndex & endIndex");
-        }
-    } 
 public:
     ImmutableListSequence() : data_(){};
 
@@ -41,24 +25,20 @@ public:
     ImmutableListSequence(ImmutableListSequence<T>&& other) : data_(std::move(other.data_)){};
 
     T GetFirst() const override {
-        Check_empty();
+        сheck_empty();
         return data_.GetFirst();
     };
 
     T GetLast() const override {
-        Check_empty();
+        сheck_empty();
         return data_.GetLast();
     };
 
     T Get(size_t index) const override {
-        Check_validate_index(index);
         return data_.Get(index);
     };
 
     std::unique_ptr<ImmutableISequence<T>> GetSubsequence(size_t startIndex, size_t endIndex) const override {
-        Check_validate_index(startIndex);
-        Check_validate_index(endIndex);
-        Check_validate_startIndex_and_endIndex(startIndex, endIndex);
         LinkedList<T>* sublist = data_.GetSubList(startIndex, endIndex);
         std::unique_ptr<ImmutableISequence<T>> new_list = std::make_unique<ImmutableListSequence<T>>(*sublist);
         delete sublist;
@@ -71,8 +51,8 @@ public:
 
     std::unique_ptr<ImmutableISequence<T>> Append(T item) const override {
         auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for (size_t i = 0; i < data_.GetLength(); ++i){
-            new_data->data_.Append(data_.Get(i));
+        for(auto& i: data_){
+            new_data->Append(i);
         }
         new_data->data_.Append(item);
         return new_data;
@@ -80,8 +60,8 @@ public:
 
     std::unique_ptr<ImmutableISequence<T>> Prepend(T item) const override {
         auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for (size_t i = 0; i < data_.GetLength(); ++i){
-            new_data->data_.Append(data_.Get(i));
+        for(auto& i: data_){
+            new_data->Append(i);
         }
         new_data->data_.Prepend(item);
         return new_data;
@@ -90,8 +70,8 @@ public:
     std::unique_ptr<ImmutableISequence<T>> InsertAt(T item, size_t index) const override {
         Check_validate_index_for_Insert(index);
         auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for (size_t i = 0; i < data_.GetLength(); ++i){
-            new_data->data_.Append(data_.Get(i));
+        for(auto& i: data_){
+            new_data->Append(i);
         }
         new_data->data_.InsertAt(item, index);
         return new_data;

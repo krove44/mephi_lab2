@@ -141,15 +141,10 @@ public:
     };
 
     ArraySequence<T>* InsertAt(T item, size_t index) override {
-        Check_validate_index_for_Insert(index);
         DynamicArray<T> new_data(cupsize + 1);
         new_data[index] = item;
-        for (size_t i = 0; i < index; ++i){
-            new_data[i] = data_[i];
-        }
-        for (size_t i = index; i < cupsize; ++i){
-            new_data[i+1] = data_[i];
-        }
+        std::copy(data_.begin(), data_.begin() + index, &new_data[0]);
+        std::copy(data_.begin() + index, data_.end(), &new_data[index + 1]);
         cupsize++;
         data_ = std::move(new_data);
         return this;
@@ -159,7 +154,6 @@ public:
         if (list == nullptr || list->GetLength() == 0){
             return this;
         }
-        
         size_t old_size = cupsize;
         size_t new_size = (old_size + list->GetLength());
         data_.Resize(new_size);
