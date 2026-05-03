@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(tests
     tests/DynamicArrayTests.cpp
-    # tests/LinkedListTests.cpp
+    tests/LinkedListTests.cpp
     # tests/ArraySequenceTests.cpp
     # tests/ListSequenceTests.cpp
     # tests/ImmutableArraySequenceTests.cpp

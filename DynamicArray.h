@@ -151,7 +151,7 @@ public:
         }
 
         T* new_data = newSize == 0 ? nullptr : new T[newSize];
-        for (size_t i = 0; i < size_; ++i) {
+        for (size_t i = 0; i < newSize && i < size_; ++i) {
             new_data[i] = data_[i];
         }
         delete[] data_;

@@ -9,7 +9,7 @@ TEST(ArraySequence, DefaultConstructor) {
     EXPECT_EQ(seq.GetLength(), 0);
 }
 
-TEST(ArraySequence, SizeConstructor) {
+TEST(ArraySequence, SizeConstructor) {  
     ArraySequence<int> seq(5);
     EXPECT_EQ(seq.GetLength(), 5);
 }

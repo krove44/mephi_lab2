@@ -1,11 +1,9 @@
 #include <curses.h>
 
 #include <cstdint>
-#include <limits>
 #include <memory>
 #include <sstream>
 #include <string>
-#include <type_traits>
 #include <vector>
 
 #include "Sequence/ArraySequence.h"
