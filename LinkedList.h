@@ -44,8 +44,6 @@ private:
         public:
             Iterator(Node* arg) : cur(arg){};
 
-            //TODO: подумай над реализацией
-
             Iterator operator+(int n) {
                 auto copy = *this;
                 for (size_t i = 0; i < n; ++i){

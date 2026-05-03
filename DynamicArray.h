@@ -104,12 +104,12 @@ public:
     }
 
     T& operator[](size_t index) {
-        Check_validate_index(index);
+        check_index(index);
         return data_[index];
     }
 
     const T& operator[](size_t index) const {
-        Check_validate_index(index);
+        check_index(index);
         return data_[index];
     }
 };
