@@ -1,10 +1,9 @@
 #pragma once
 
-#include <chrono>
 #include <cstddef>
-#include <exception>
 #include <stdexcept>
 #include <utility>
+#include <span>
 
 template <typename T>
 class LinkedList {
@@ -100,13 +99,9 @@ public:
     LinkedList() : head_(nullptr), tail_(nullptr) {}
 
     //конструктор от массива
-    LinkedList(const T* items, size_t count) : LinkedList() {
-        if (items == nullptr && count > 0) {
-            throw std::invalid_argument("LinkedList ptr cannot be null when count is positive");
-        }
-
-        for (size_t i = 0; i < count; ++i) {
-            Append(items[i]);
+    LinkedList(std::span<const T> data) : LinkedList() {
+        for(const T& elem : data) {
+            Append(elem);
         }
     }
 

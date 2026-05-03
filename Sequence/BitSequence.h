@@ -3,6 +3,7 @@
 #include "Sequence.h"
 #include "../DynamicArray.h"
 #include <cstdint>
+#include <span>
 
 
 using T = uint8_t;
@@ -37,14 +38,13 @@ public:
         }
     };
     
-    BitSequence(const T* data, size_t count) : BitSequence(count) {//TODO : спан
-        if (data == nullptr && count > 0) {
-            throw std::invalid_argument("BitSequence ptr bad");
+    BitSequence(std::span<const T> data) : BitSequence(data.size()) {//TODO : спан
+        size_t i = 0;
+        for (const T& bit : data) {
+            check_value(bit);
+            Set(i++, bit);
         }
-        for (size_t i = 0; i < count; ++i) {
-            check_value(data[i]);
-            Set(i, data[i]);
-        }
+    
     };
 
     BitSequence(const BitSequence& other) : data_(other.data_), cupsize(other.cupsize) {};

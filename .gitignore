@@ -26,6 +26,7 @@ Makefile
 #IDE
 .idea/
 .vscode/
+*txt
 
 #OS мусор
 .DS_Store

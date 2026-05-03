@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <utility>
 #include <stdexcept>
+#include <span>
 
 template <typename T>
 class DynamicArray {
@@ -81,12 +82,10 @@ public:
     DynamicArray(size_t size) : size_(size), data_(size_ == 0 ? nullptr : new T[size_]) {}
 
     //конструктор от массива
-    DynamicArray(const T* items, size_t count) : DynamicArray(count) {
-        if (items == nullptr && count > 0) {
-            throw std::invalid_argument("DynamicArray bad ptr");
-        }
-        for (size_t i = 0; i < size_; i++) {
-            data_[i] = items[i];
+    DynamicArray(std::span<const T> data) : DynamicArray(data.size()) {
+        size_t i = 0;
+        for (const T& elem : data) {
+            data_[i++] = elem;
         }
     }
 

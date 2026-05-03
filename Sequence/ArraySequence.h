@@ -84,12 +84,10 @@ public:
 
     ArraySequence() : data_{}, cupsize(0){};
 
-    ArraySequence(T* items, size_t count) : data_(count), cupsize(count) {
-        if (items == nullptr && count > 0){
-            throw std::invalid_argument("ArraySequence bad ptr");
-        }
-        for (size_t i = 0; i < count; i++){
-            data_[i] = items[i];
+    ArraySequence(std::span<const T> data) : data_(data.size()), cupsize(data.size()) {
+        size_t i = 0;
+        for (const T& elem : data) {
+            data_[i++] = elem;
         }
     };
 
