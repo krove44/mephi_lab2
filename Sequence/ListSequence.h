@@ -8,29 +8,11 @@ template<typename T>
 class ListSequence : public ISequence<T> {
 private:
     LinkedList<T> data_;
-    void Check_empty() const {
+    void check_empty() const {
         if (data_.GetLength() == 0) {
             throw std::logic_error("ListSequence is empty");
         }
     }
-
-    void Check_validate_index(size_t index) const {
-        if (index < 0 || index >= data_.GetLength()) {
-            throw std::out_of_range("ListSequence index is out of range");
-        }
-    }
-
-    void Check_validate_index_for_Insert(size_t index) const {  
-        if (index < 0 || index > data_.GetLength()) {
-            throw std::out_of_range("ListSequence index out of range");
-        }
-    }
-
-    static void Check_validate_startIndex_and_endIndex(size_t startIndex, size_t endIndex) {  
-        if (startIndex > endIndex) {
-            throw std::out_of_range("ListSequence have bad startIndex & endIndex");
-        }
-    } 
 public:
     ListSequence() : data_(){};
 
@@ -41,27 +23,26 @@ public:
     ListSequence(ListSequence<T>&& other) : data_(std::move(other.data_)){};
 
     T GetFirst() const override {
-        Check_empty();
+        check_empty();
         return data_.GetFirst();
     };
 
     T GetLast() const override {
-        Check_empty();
+        check_empty();
         return data_.GetLast();
     };
 
     T Get(size_t index) const override {
-        Check_validate_index(index);
         return data_.Get(index);
     };
 
     ListSequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const override {
-        Check_validate_index(startIndex);
-        Check_validate_index(endIndex);
-        Check_validate_startIndex_and_endIndex(startIndex, endIndex);
-        LinkedList<T>* sublist = data_.GetSubList(startIndex, endIndex);
-        ListSequence<T>* new_list = new ListSequence<T>(*sublist);
-        delete sublist;
+        if (startIndex > endIndex) {
+            throw std::out_of_range("Badddd");
+        }
+        LinkedList<T>* new_data = data_.GetSubList(startIndex, endIndex);
+        ListSequence<T>* new_list = new ListSequence<T>(*new_data);
+        delete new_data;
         return new_list;
     }; 
 
@@ -80,13 +61,12 @@ public:
     };
 
     ListSequence<T>* InsertAt(T item, size_t index) override {
-        Check_validate_index_for_Insert(index);
         data_.InsertAt(item, index);
         return this;
     };
 
     ListSequence<T>* Concat(const ISequence<T>* list) override {
-        if (list == nullptr){
+        if (list == nullptr || list->GetLength() == 0){
             return this;
         }
         for (size_t i = 0; i < list->GetLength(); ++i) {
@@ -94,7 +74,5 @@ public:
         }   
         return this;
     };
-
-
 
 };
