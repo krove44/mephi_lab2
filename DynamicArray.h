@@ -11,12 +11,69 @@ private:
     T* data_;
 
     void check_index(size_t index) const{  
-        if (index >= size_) {
+        if (index > size_) {
             throw std::out_of_range("DynamicArray index out of range");
         }
     }
 
+    class Iterator {
+        T* cur;
+        public:
+        explicit Iterator(T* ptr) : cur(ptr){};
+        Iterator operator+(int n) {
+            Iterator copy{cur + n};
+            return copy;
+            } 
+            
+        Iterator operator-(int n) {
+            Iterator copy{cur - n};
+            return copy;
+            }
+        
+        Iterator& operator++() {
+            ++cur;
+            return *this; 
+            } 
+
+        Iterator& operator--() {
+            --cur;
+            return *this;
+            } 
+
+        Iterator operator++(int) {
+            Iterator old = *this;
+            cur++;
+            return old;
+            } 
+
+        Iterator operator--(int) {
+            Iterator old = *this;
+            cur--;
+            return old;
+            }
+
+        bool operator==(const Iterator& other){
+            return cur == other.cur;
+            };
+
+        bool operator!=(const Iterator& other){
+            return cur != other.cur;
+            };
+
+        T& operator*() {
+            return *cur;
+        }
+
+    };
+    
 public:
+    Iterator begin() const {
+        return Iterator(&data_[0]);
+    }
+    Iterator end() const {
+        return Iterator(&data_[0] + size_);
+    }
+
     //обычный конструктор
     DynamicArray() : size_(0), data_(nullptr) {}
 
@@ -26,7 +83,7 @@ public:
     //конструктор от массива
     DynamicArray(const T* items, size_t count) : DynamicArray(count) {
         if (items == nullptr && count > 0) {
-            throw std::invalid_argument("DynamicArray ptr can't be null when count is positive");
+            throw std::invalid_argument("DynamicArray bad ptr");
         }
         for (size_t i = 0; i < size_; i++) {
             data_[i] = items[i];

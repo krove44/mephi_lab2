@@ -42,7 +42,7 @@ private:
             friend class LinkedList<T>;
 
         public:
-            Iterator(Node* arg) : cur(arg){};
+            explicit Iterator(Node* arg) : cur(arg){};
 
             Iterator operator+(int n) {
                 auto copy = *this;
@@ -92,9 +92,10 @@ private:
             };
             T& operator*(){return cur->data;}
         };
+    
+public:
     Iterator begin() const {return Iterator(head_);};
     Iterator end() const{return Iterator(nullptr);};
-public:
     //пустой конструктор
     LinkedList() : head_(nullptr), tail_(nullptr) {}
 
@@ -191,7 +192,7 @@ public:
         }
 
         auto* res = new LinkedList<T>();
-        for(auto it = begin() + startIndex; it != (begin() + endIndex); res->Append(it.cur->data), it++){};
+        for(auto it = begin() + startIndex; it != (begin() + endIndex + 1); res->Append(*it), it++){};
         return res;
     }
 
