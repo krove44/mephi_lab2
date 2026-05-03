@@ -69,10 +69,10 @@ private:
     
 public:
     Iterator begin() const {
-        return Iterator(&data_[0]);
+        return Iterator(const_cast<T*>(&data_[0]));
     }
     Iterator end() const {
-        return Iterator(&data_[0] + size_);
+        return Iterator(const_cast<T*>(&data_[0] + size_));
     }
 
     //обычный конструктор

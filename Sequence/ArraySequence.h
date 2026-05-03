@@ -11,7 +11,7 @@ private:
     DynamicArray<T> data_;
     size_t cupsize;
 
-    void check_empty(){
+    void check_empty() const {
         if (cupsize == 0){
             throw std::out_of_range("ArraySequence is empty");
         }
@@ -72,10 +72,10 @@ private:
     
 public:
     Iterator begin() const {
-        return Iterator(&data_[0]);
+        return Iterator(const_cast<T*>(&data_[0]));
     }
     Iterator end() const {
-        return Iterator(&data_[0] + cupsize);
+        return Iterator(const_cast<T*>(&data_[0] + cupsize));
     }
 
     ArraySequence() : data_{}, cupsize(0){};
