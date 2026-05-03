@@ -2,12 +2,8 @@
 #include "Sequence.h"
 #include "../DynamicArray.h"
 #include <cstddef>
-#include <eh.h>
-#include <iterator>
 #include <stdexcept>
 #include <utility>
-#include <vcruntime_typeinfo.h>
-
 
 template<typename T>
 class ArraySequence : public ISequence<T> {
