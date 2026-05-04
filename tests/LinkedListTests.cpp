@@ -164,7 +164,7 @@ TEST(LinkedList, GetLastEmptyThrows) {
 TEST(LinkedList, GetOutOfRangeThrows) {
     int data[] = {1, 2};
     LinkedList<int> list(std::span(data, 2));
-    EXPECT_THROW(list.Get(5), std::invalid_argument);
+    EXPECT_THROW(list.Get(5), std::out_of_range);
 }
 
 TEST(LinkedList, GetSubList) {

@@ -24,12 +24,12 @@ private:
         explicit Iterator(T* ptr) : cur(ptr) {};
 
         Iterator operator+(int n) {
-            Iterator copy{cur + n};
+            Iterator copy(cur + n);
             return copy;
             } 
             
         Iterator operator-(int n) {
-            Iterator copy{cur - n};
+            Iterator copy(cur - n);
             return copy;
             }
         
@@ -87,7 +87,7 @@ public:
         }
     };
 
-    ArraySequence(size_t size) : data_(size), cupsize(size){};
+    ArraySequence(size_t size) : data_(size), cupsize(0){};
 
     ArraySequence(const ArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
@@ -111,10 +111,10 @@ public:
 
     ArraySequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const override {
         if (startIndex > endIndex) {
-            throw std::out_of_range("Badddd");
+            throw std::out_of_range("startIndex > endIndex");
         }
         ArraySequence<T>* new_data = new ArraySequence<T>(endIndex-startIndex + 1);
-        for(auto it = begin() + startIndex; it != (begin() + endIndex + 1); new_data->Append(*it), it++){};
+        for(auto it = (begin() + startIndex); it != (begin() + endIndex + 1); new_data->Append(*it), it++){};
         return new_data;
     };
 

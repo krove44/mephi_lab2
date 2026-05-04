@@ -10,7 +10,7 @@ TEST(ImmutableArraySequence, DefaultConstructor) {
 
 TEST(ImmutableArraySequence, SizeConstructor) {
     ImmutableArraySequence<int> seq(10);
-    EXPECT_EQ(seq.GetLength(), 10);
+    EXPECT_EQ(seq.GetLength(), 0);
 }
 
 TEST(ImmutableArraySequence, FromSpanConstructor) {

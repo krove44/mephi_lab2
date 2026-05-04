@@ -6,7 +6,6 @@
 
 template<typename T>
 class ImmutableArraySequence : public ImmutableISequence<T>{
-    friend class ImmutableArraySequence<T>;
 private:
     DynamicArray<T> data_;
     size_t cupsize;
@@ -88,7 +87,7 @@ public:
         }
     };
 
-    ImmutableArraySequence(size_t size) : data_(size), cupsize(size){};
+    ImmutableArraySequence(size_t size) : data_(size), cupsize(0){};
 
     ImmutableArraySequence(const ImmutableArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
@@ -113,8 +112,12 @@ public:
     }
 
     std::unique_ptr<ImmutableISequence<T>> GetSubsequence(size_t startIndex, size_t endIndex) const override {
-        auto new_data = std::make_unique<ImmutableArraySequence<T>>(endIndex-startIndex + 1);
-        for(auto it = begin() + startIndex; it != (begin() + endIndex + 1); new_data->Append(*it), it++){};
+        size_t len = endIndex - startIndex + 1;
+        auto new_data = std::make_unique<ImmutableArraySequence<T>>(len);
+        for (size_t i = 0; i < len; ++i) {
+            new_data->data_[i] = data_[startIndex + i];
+        }
+        new_data->cupsize = len;
         return new_data;
     };
 
@@ -123,20 +126,26 @@ public:
     };
 
     std::unique_ptr<ImmutableISequence<T>> Append(T item) const override {
-        auto new_data = std::make_unique<ImmutableArraySequence<T>>(data_.GetSize() + 1);
+        auto new_data = std::make_unique<ImmutableArraySequence<T>>(cupsize + 1);
+        size_t i = 0;
         for(auto& item : data_){
-            new_data->Append(item);
+            new_data->data_[i] = item;
+            i++;
         };
-        new_data->data_.Set(data_.GetSize(), item);
+        new_data->data_.Set(cupsize, item);
+        new_data->cupsize = cupsize + 1;
         return new_data;
     };
 
     std::unique_ptr<ImmutableISequence<T>> Prepend(T item) const override {
-        auto new_data = std::make_unique<ImmutableArraySequence<T>>(data_.GetSize() + 1);
+        auto new_data = std::make_unique<ImmutableArraySequence<T>>(cupsize + 1);
         new_data->data_[0] = item;
+        size_t i = 1;
         for(auto& item : data_){
-            new_data->Append(item);
+            new_data->data_[i] = item;
+            i++;
         };
+        new_data->cupsize = cupsize + 1;
         return new_data;
     };
 
@@ -145,23 +154,24 @@ public:
         new_data->data_[index] = item;
         std::copy(data_.begin(), data_.begin() + index, &new_data->data_[0]);
         std::copy(data_.begin() + index, data_.end(), &new_data->data_[index + 1]);
+        new_data->cupsize = data_.GetSize() + 1;
         return new_data;
     };
 
     std::unique_ptr<ImmutableISequence<T>> Concat(const ImmutableISequence<T>* list) const override {
         if (list == nullptr || list->GetLength() == 0){
-            auto new_data = std::make_unique<ImmutableArraySequence<T>>(*this);
-            return new_data;
+            return std::make_unique<ImmutableArraySequence<T>>(*this);
         }
         size_t old_size = cupsize;
-        size_t new_size = (old_size + list->GetLength());
+        size_t new_size = old_size + list->GetLength();
         auto new_data = std::make_unique<ImmutableArraySequence<T>>(new_size);
-        for(size_t i = 0; i < data_.GetSize(); ++i){
+        for (size_t i = 0; i < old_size; ++i) {
             new_data->data_[i] = data_[i];
         }
-        for (size_t i = 0; i < new_size; ++i){
+        for (size_t i = 0; i < list->GetLength(); ++i) {
             new_data->data_[i + old_size] = list->Get(i);
         }
+        new_data->cupsize = new_size;
         return new_data;
     };
 

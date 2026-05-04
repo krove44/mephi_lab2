@@ -18,11 +18,11 @@ FetchContent_MakeAvailable(googletest)
 add_executable(tests
     tests/DynamicArrayTests.cpp
     tests/LinkedListTests.cpp
-    # tests/ArraySequenceTests.cpp
-    # tests/ListSequenceTests.cpp
-    # tests/ImmutableArraySequenceTests.cpp
-    # tests/ImmutableLinkedListTests.cpp
-    # tests/BitSequenceTests.cpp
+    tests/ArraySequenceTests.cpp
+    tests/ListSequenceTests.cpp
+    tests/ImmutableArraySequenceTests.cpp
+    tests/ImmutableListSequenceTests.cpp
+    tests/BitSequenceTests.cpp
 )
 
 target_link_libraries(tests PRIVATE gtest gtest_main)

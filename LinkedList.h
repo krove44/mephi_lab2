@@ -147,9 +147,6 @@ public:
     Node* operator[](size_t index) {
         auto it = begin();
         for (size_t i = 0; i < index; ++i) {
-            if (it.cur == nullptr){
-                throw std::invalid_argument("bad argumennt in operator");
-            }
             it++;
         }
         return it.cur;
@@ -158,9 +155,6 @@ public:
     const Node* operator[](size_t index) const {
         auto it = begin();
         for (size_t i = 0; i < index; ++i) {
-            if (it.cur == nullptr){
-                throw std::invalid_argument("bad argumennt in operator");
-            }
             it++;
         }
         return it.cur;
@@ -177,7 +171,14 @@ public:
     }
 
     T Get(size_t index) const {
-        return this->operator[](index)->data;
+        auto it = begin();
+        for (size_t i = 0; i < index; ++i) {
+            if (it.cur == nullptr){
+                throw std::out_of_range("bad argumennt in operator");
+            }
+            it++;
+        }
+        return *it;
     }
 
 

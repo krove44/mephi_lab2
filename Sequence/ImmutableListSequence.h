@@ -50,29 +50,19 @@ public:
     };
 
     std::unique_ptr<ImmutableISequence<T>> Append(T item) const override {
-        auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for(auto& i: data_){
-            new_data->Append(i);
-        }
+        auto new_data = std::make_unique<ImmutableListSequence<T>>(data_);
         new_data->data_.Append(item);
         return new_data;
     };
 
     std::unique_ptr<ImmutableISequence<T>> Prepend(T item) const override {
-        auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for(auto& i: data_){
-            new_data->Append(i);
-        }
+        auto new_data = std::make_unique<ImmutableListSequence<T>>(data_);
         new_data->data_.Prepend(item);
         return new_data;
     };
 
     std::unique_ptr<ImmutableISequence<T>> InsertAt(T item, size_t index) const override {
-        Check_validate_index_for_Insert(index);
-        auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for(auto& i: data_){
-            new_data->Append(i);
-        }
+        auto new_data = std::make_unique<ImmutableListSequence<T>>(data_);
         new_data->data_.InsertAt(item, index);
         return new_data;
     };
@@ -90,7 +80,5 @@ public:
         }   
         return new_data;
     };
-
-
 
 };
