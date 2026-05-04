@@ -54,11 +54,13 @@ TEST(ArraySequence, GetLastEmptyThrows) {
 }
 
 TEST(ArraySequence, GetAndSet) {
-    ArraySequence<int> seq(2);
-    seq.Set(0, 100);
-    seq.Set(1, 200);
+    ArraySequence<int> seq;
+    seq.Append(100);
+    seq.Append(200);
     EXPECT_EQ(seq.Get(0), 100);
     EXPECT_EQ(seq.Get(1), 200);
+    seq.Set(0, 300);
+    EXPECT_EQ(seq.Get(0), 300);
 }
 
 TEST(ArraySequence, GetOutOfRangeThrows) {

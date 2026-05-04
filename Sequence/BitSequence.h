@@ -38,7 +38,7 @@ public:
         }
     };
     
-    BitSequence(std::span<const T> data) : BitSequence(data.size()) {//TODO : спан
+    BitSequence(std::span<const T> data) : BitSequence(data.size()) {
         size_t i = 0;
         for (const T& bit : data) {
             check_value(bit);

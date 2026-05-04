@@ -17,6 +17,12 @@ private:
         }
     }
 
+    void check_index(size_t index) const{  
+        if (index > cupsize) {
+            throw std::out_of_range("ArraySequence index out of range");
+        }
+    }
+
     class Iterator {
         T* cur;
         friend class ArraySequence<T>;
@@ -102,6 +108,7 @@ public:
     };
 
     T Get(size_t index) const override {
+        check_index(index);
         return data_.Get(index);
     };
 
