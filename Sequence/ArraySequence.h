@@ -171,33 +171,4 @@ public:
         return this;
     };
 
-    // template<typename T2>
-    // //короче хз как реализовать подумай костян
-    // ISequence<T2>* Map(T2 (*func)(T)) {
-    //     if (func == nullptr) {
-    //         throw std::invalid_argument("Map func is null");
-    //     }
-
-    //     ArraySequence<T2>* res = new ArraySequence<T2>();
-
-    //     for (size_t i = 0; i < data_.GetSize(); ++i){
-    //         res->Append(func(data_.Get(i))); 
-    //     }
-
-    //     return res;
-    // };
-
-    // ISequence<T>* Where(bool (*predicate)(T));
-
-    // ISequence<T>* Reduce(T2 (*)(T2,T));
-
-    // Option<T> GetFirst(bool (*)(T) = 0);
-
-    // Option<T> GetLast(bool (*)(T) = 0);
-
-
-
-
-
-
 };

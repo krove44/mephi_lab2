@@ -174,7 +174,7 @@ public:
         auto it = begin();
         for (size_t i = 0; i < index; ++i) {
             if (it.cur == nullptr){
-                throw std::out_of_range("bad argumennt in operator");
+                throw std::out_of_range("index out of range");
             }
             it++;
         }
@@ -184,7 +184,7 @@ public:
 
     LinkedList<T>* GetSubList(size_t startIndex, size_t endIndex) const {
         if (startIndex > endIndex) {
-            throw std::invalid_argument("Start index must be not more end index");
+            throw std::invalid_argument("startIndex > endIndex");
         }
 
         auto* res = new LinkedList<T>();
