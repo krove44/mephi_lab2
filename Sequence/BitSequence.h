@@ -76,7 +76,7 @@ public:
         return this;
     };
 
-    size_t GetLength() const override {
+    size_t GetLenght() const override {
         return cupsize;
     };
 
@@ -125,14 +125,14 @@ public:
     };
 
     BitSequence* Concat(const ISequence<T>* list) override {
-        if (list == nullptr || list->GetLength() == 0) {
+        if (list == nullptr || list->GetLenght() == 0) {
             return this;
         }
-        BitSequence new_data(cupsize + list->GetLength());
+        BitSequence new_data(cupsize + list->GetLenght());
         for (size_t i = 0; i < cupsize; ++i) {
             new_data.Set(i, Get(i));
         }
-        for (size_t i = 0; i < list->GetLength(); ++i) {
+        for (size_t i = 0; i < list->GetLenght(); ++i) {
             new_data.Set(cupsize + i, list->Get(i));
         }
         *this = new_data;

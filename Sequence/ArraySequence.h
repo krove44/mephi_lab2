@@ -2,6 +2,7 @@
 #include "Sequence.h"
 #include "../DynamicArray.h"
 #include <cstddef>
+#include <initializer_list>
 #include <stdexcept>
 #include <utility>
 
@@ -84,6 +85,8 @@ public:
         return Iterator(const_cast<T*>(&data_[0] + cupsize));
     }
 
+    ArraySequence(std::initializer_list<T> e) : data_(e), cupsize(e.size()){};
+
     ArraySequence() : data_{}, cupsize(0){};
 
     ArraySequence(std::span<const T> data) : data_(data.size()), cupsize(data.size()) {
@@ -112,6 +115,13 @@ public:
         return data_.Get(index);
     };
 
+    T& operator[](size_t index) {
+        return data_[index];
+    };
+    const T& operator[](size_t index) const {
+        return data_[index];
+    };
+
     void Set(const size_t& index, const T& value) {
         data_.Set(index, value);
     }
@@ -125,7 +135,7 @@ public:
         return new_data;
     };
 
-    size_t GetLength() const override {
+    size_t GetLenght() const override {
         return cupsize;
     };
 
@@ -158,13 +168,13 @@ public:
     };
 
     ArraySequence<T>* Concat(const ISequence<T>* list) override {
-        if (list == nullptr || list->GetLength() == 0){
+        if (list == nullptr || list->GetLenght() == 0){
             return this;
         }
         size_t old_size = cupsize;
-        size_t new_size = (old_size + list->GetLength());
+        size_t new_size = (old_size + list->GetLenght());
         data_.Resize(new_size);
-        for (size_t i = 0; i < list->GetLength(); ++i){
+        for (size_t i = 0; i < list->GetLenght(); ++i){
             data_[old_size + i] = list->Get(i);
         }
         cupsize = new_size;

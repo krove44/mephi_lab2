@@ -10,7 +10,7 @@ public:
     virtual T GetFirst() const = 0;
     virtual T GetLast() const = 0;
     virtual T Get(size_t index) const = 0;
-    virtual size_t GetLength() const = 0;
+    virtual size_t GetLenght() const = 0;
     virtual ISequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const = 0;
     
     virtual ISequence<T>* Append(T item) = 0;
@@ -29,7 +29,7 @@ public:
     virtual T GetFirst() const = 0;
     virtual T GetLast() const = 0;
     virtual T Get(size_t index) const = 0;
-    virtual size_t GetLength() const = 0;
+    virtual size_t GetLenght() const = 0;
     virtual std::unique_ptr<ImmutableISequence<T>> GetSubsequence(size_t startIndex, size_t endIndex) const = 0;
     
     virtual std::unique_ptr<ImmutableISequence<T>> Append(T item) const = 0;

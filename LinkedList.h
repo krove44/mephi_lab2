@@ -97,7 +97,6 @@ public:
     Iterator end() const{return Iterator(nullptr);};
     //пустой конструктор
     LinkedList() : head_(nullptr), tail_(nullptr) {}
-
     //конструктор от массива
     LinkedList(std::span<const T> data) : LinkedList() {
         for(const T& elem : data) {
@@ -170,7 +169,7 @@ public:
         return tail_->data;
     }
 
-    T Get(size_t index) const {
+    T& Get(size_t index) const {
         auto it = begin();
         for (size_t i = 0; i < index; ++i) {
             if (it.cur == nullptr){
@@ -193,7 +192,7 @@ public:
     }
 
 
-    size_t GetLength() const {
+    size_t GetLenght() const {
         size_t count{};
         for(auto cur = begin(); cur != end(); cur++, count++){}
         return count;
@@ -249,7 +248,7 @@ public:
         if (list == nullptr) {
             return this;
         }
-        for (size_t index = 0; index < list->GetLength(); ++index) {
+        for (size_t index = 0; index < list->GetLenght(); ++index) {
             Append(list->Get(index));
         }
         return this;

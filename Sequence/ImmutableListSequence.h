@@ -10,7 +10,7 @@ private:
     LinkedList<T> data_;
 
     void сheck_empty() const {
-        if (data_.GetLength() == 0) {
+        if (data_.GetLenght() == 0) {
             throw std::logic_error("ImmutableListSequence is empty");
         }
     }
@@ -45,8 +45,8 @@ public:
         return new_list;
     }; 
 
-    size_t GetLength() const override {
-        return data_.GetLength();
+    size_t GetLenght() const override {
+        return data_.GetLenght();
     };
 
     std::unique_ptr<ImmutableISequence<T>> Append(T item) const override {
@@ -69,13 +69,13 @@ public:
 
     std::unique_ptr<ImmutableISequence<T>> Concat(const ImmutableISequence<T>* list) const override {
         auto new_data = std::make_unique<ImmutableListSequence<T>>();
-        for (size_t i = 0; i < data_.GetLength(); ++i){
+        for (size_t i = 0; i < data_.GetLenght(); ++i){
             new_data->data_.Append(data_.Get(i));
         }
         if (list == nullptr){
             return new_data;
         }
-        for (size_t i = 0; i < list->GetLength(); ++i) {
+        for (size_t i = 0; i < list->GetLenght(); ++i) {
             new_data->data_.Append(list->Get(i));
         }   
         return new_data;

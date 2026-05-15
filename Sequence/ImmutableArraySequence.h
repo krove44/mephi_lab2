@@ -128,7 +128,7 @@ public:
         return new_data;
     };
 
-    size_t GetLength() const override {
+    size_t GetLenght() const override {
         return cupsize;
     };
 
@@ -166,16 +166,16 @@ public:
     };
 
     std::unique_ptr<ImmutableISequence<T>> Concat(const ImmutableISequence<T>* list) const override {
-        if (list == nullptr || list->GetLength() == 0){
+        if (list == nullptr || list->GetLenght() == 0){
             return std::make_unique<ImmutableArraySequence<T>>(*this);
         }
         size_t old_size = cupsize;
-        size_t new_size = old_size + list->GetLength();
+        size_t new_size = old_size + list->GetLenght();
         auto new_data = std::make_unique<ImmutableArraySequence<T>>(new_size);
         for (size_t i = 0; i < old_size; ++i) {
             new_data->data_[i] = data_[i];
         }
-        for (size_t i = 0; i < list->GetLength(); ++i) {
+        for (size_t i = 0; i < list->GetLenght(); ++i) {
             new_data->data_[i + old_size] = list->Get(i);
         }
         new_data->cupsize = new_size;
