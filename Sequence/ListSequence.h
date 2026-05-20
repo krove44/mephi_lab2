@@ -51,6 +51,11 @@ public:
     const T& operator[](size_t index) const {
         return data_.Get(index);
     }
+    ListSequence<T>& operator=(const ListSequence<T>& other) {
+        if (this == &other) return *this;
+        data_ = other.data_;
+        return *this;
+    }
 
     ListSequence<T>* GetSubsequence(size_t startIndex, size_t endIndex) const override {
         if (startIndex > endIndex) {

@@ -139,6 +139,10 @@ public:
         return cupsize;
     };
 
+    void Clear() noexcept {
+        cupsize = 0;
+    }
+
     ArraySequence<T>* Append(T item) override {
         if (cupsize == data_.GetSize()){
             data_.Resize(cupsize == 0 ? 1 : 2 * cupsize);
