@@ -2,6 +2,7 @@
 #include "Sequence.h"
 #include "../LinkedList.h"
 #include <cstddef>
+#include <initializer_list>
 #include <span>
 #include <utility>
 
@@ -29,6 +30,8 @@ public:
     ListSequence(const ListSequence<T>& other) : data_(other.data_){};
 
     ListSequence(ListSequence<T>&& other) : data_(std::move(other.data_)){};
+
+    ListSequence(std::initializer_list<T> elem) : data_(elem){};
 
     T GetFirst() const override {
         check_empty();

@@ -100,6 +100,8 @@ public:
 
     ArraySequence(const ArraySequence<T>& other) : data_(other.data_), cupsize(other.cupsize){};
 
+    ArraySequence(const ArraySequence<T>&& other) : data_(std::move(other.data_)), cupsize(std::move(other.cupsize)){};
+
     T GetFirst() const override {
         check_empty();
         return data_.Get(0);

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <cstddef>
+#include <initializer_list>
+#include <ranges>
 #include <stdexcept>
 #include <utility>
 #include <span>
@@ -45,7 +47,7 @@ private:
 
             Iterator operator+(int n) {
                 auto copy = *this;
-                for (size_t i = 0; i < n; ++i){
+                for (int i = 0; i < n; ++i){
                     if (copy.cur == nullptr){
                         throw std::logic_error("bad arg for iterator");
                     }
@@ -55,7 +57,7 @@ private:
             } 
             Iterator operator-(int n) {
                 auto copy = *this;
-                for (size_t i = n; i > 0; --i){
+                for (int i = n; i > 0; --i){
                     if (copy.cur == nullptr){
                         throw std::logic_error("bad arg for iterator");
                     }
@@ -103,6 +105,11 @@ public:
             Append(elem);
         }
     }
+    LinkedList(std::initializer_list<T> elem) : LinkedList() {
+        for(const T& el : elem) {
+            Append(el);
+        };
+    }; 
 
     //конструктор копирования
     LinkedList(const LinkedList<T>& other) : LinkedList() {
